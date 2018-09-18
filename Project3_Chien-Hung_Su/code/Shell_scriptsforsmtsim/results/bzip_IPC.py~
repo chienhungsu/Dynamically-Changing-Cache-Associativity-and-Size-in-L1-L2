@@ -1,0 +1,78 @@
+#! /usr/bin/python
+
+import re
+import csv
+import os 
+import math
+import xlwt
+comma = ','
+o=1
+cyc=''
+instr=''
+
+
+def search_IPC(startID, endID, Filename):
+	for o in range(endID - startID +1):
+		filei = "/home/chien/Desktop/611Project/IPC/"+"bzip2_source_IPC"+str(o)
+		fileIPC1 = open(filei+'.txt' , 'w')
+		workbook = xlwt.Workbook()
+		sheet = workbook.add_sheet("IPC")
+		p=0
+		t=0
+		for i in range(endID - startID +1):
+			IPC_Data = []
+			IPC_Data1 = []
+			File1 = Filename + str(i)
+			#file2 = Filename1 + str(startID +1)
+			with open( File1) as txtFile:
+				txtData = txtFile.readlines()
+				#print(txtData)
+				for line in txtData:
+					if line != '\n':
+						words = re.split(' |,|= |\n|:|;', line)
+						if words[0].startswith('cyc'):
+							
+							value = str(words[2])
+							print('cyc'+value)
+							sheet.write(t,0,str(t))
+							sheet.write(t,1,value)
+							IPC_Data.append('cyc '+value)
+							value4 = str(words[6])
+							#value4 = value4+comma+'\n'
+							print('instr'+value4)
+							sheet.write(t,2,value4)
+							IPC_Data.append('instr '+value4)
+							if p !=0:
+							
+								cyc=float(value)-float(cyc1)
+								instr=float(value4)-float(instr1)
+								ipc=float(instr)/float(cyc)
+								sheet.write(t,3,str(ipc))
+								IPC_Data.append('IPC '+str(ipc)+'\n')
+								instr1=float(value4)
+								cyc1=float(value)
+							if p==0:
+								cyc1=float(value)
+								instr1=float(value4)
+								ipc=float(value4)/float(value)
+								sheet.write(t,3,str(ipc))
+								IPC_Data.append('IPC '+str(ipc)+'\n')
+							p=p+1
+							t=t+1	
+				IPC= comma.join(IPC_Data)
+			fileIPC1.write(IPC)
+
+			workbook.save("/home/chien/Desktop/611Project/IPC/"+"bzip2_source"+str(i)+".xls")
+	fileIPC1.close()
+		#with open(file2) as txtFile1:
+		#	Data1 = txtFile1.readlines()
+
+
+
+
+
+def main():
+	search_IPC(0,15,'bzip2_source')
+
+if __name__ =='__main__':
+	main()

@@ -1,0 +1,2634 @@
+--Starting up.
+--Command line: /home/chien/Desktop/SMTSIM/SMTSIM/build.linux-amd64/smtsim -conffile /home/chien/Desktop/SMTSIM/smtsim-scripts/workloads-list_ffs0.conf -confexpr 'Syscall/root_paths_at_cwd = t;' -confexpr 'Syscall/ForceUniqueNames = { "fort.11"; };' -confexpr 'AppStatsLog/enable = t;' -confexpr 'AppStatsLog/interval = 10e3;' -confexpr 'AppStatsLog/base_name = "/home/chien/Desktop/611Project/results/bwaves_060";' -confexpr 'AppStatsLog/stat_mask/all = f;' -confexpr 'AppStatsLog/stat_mask/cyc = t;' -confexpr 'AppStatsLog/stat_mask/commits = t;' -confexpr 'AppStatsLog/stat_mask/l3cache_hr = t;' -confexpr 'AppStatsLog/stat_mask/mem_delay = t;' -confexpr 'AppStatsLog/stat_mask/itlb_acc = t;' -confexpr 'AppStatsLog/stat_mask/dtlb_acc = t;' -confexpr 'AppStatsLog/stat_mask/icache_acc = t;' -confexpr 'AppStatsLog/stat_mask/dcache_acc = t;' -confexpr 'AppStatsLog/stat_mask/l2cache_acc = t;' -confexpr 'AppStatsLog/stat_mask/l3cache_acc = t;' -confexpr 'AppStatsLog/stat_mask/bpred_acc = t;' -confexpr 'AppStatsLog/stat_mask/fpalu_acc = t;' -confexpr 'AppStatsLog/stat_mask/intalu_acc = t;' -confexpr 'AppStatsLog/stat_mask/ldst_acc = t;' -confexpr 'AppStatsLog/stat_mask/lsq_acc = t;' -confexpr 'AppStatsLog/stat_mask/iq_acc = t;' -confexpr 'AppStatsLog/stat_mask/fq_acc = t;' -confexpr 'AppStatsLog/stat_mask/ireg_acc = t;' -confexpr 'AppStatsLog/stat_mask/freg_acc = t;' -confexpr 'AppStatsLog/stat_mask/iren_acc = t;' -confexpr 'AppStatsLog/stat_mask/fren_acc = t;' -confexpr 'AppStatsLog/stat_mask/rob_acc = t;' -confexpr 'AppStatsLog/stat_mask/lsq_occ = t;' -confexpr 'AppStatsLog/stat_mask/iq_occ = t;' -confexpr 'AppStatsLog/stat_mask/fq_occ = t;' -confexpr 'AppStatsLog/stat_mask/ireg_occ = t;' -confexpr 'AppStatsLog/stat_mask/freg_occ = t;' -confexpr 'AppStatsLog/stat_mask/iren_occ = t;' -confexpr 'AppStatsLog/stat_mask/fren_occ = t;' -confexpr 'AppStatsLog/stat_mask/rob_occ = t;' -confexpr 'Workloads/bwaves_06/ff_dist = 1.000000e+07;' -confexpr 'WorkQueue/Jobs/job_1 = { start_time = 0.; workload = "bwaves_06"};' -confexpr 'WorkQueue/max_running_jobs = 1;' -confexpr 'Global/thread_length = 1.000000e+07;' -confexpr 'Global/num_cores = 1;' -confexpr 'Global/num_contexts = 1;' -confexpr 'Global/ThreadCoreMap/t0 = 0;' -confexpr 'Global/Mem/private_l2caches = t;' -confexpr 'Global/Mem/L2Cache/size_kb = 128;' -confexpr 'Global/Mem/L2Cache/assoc = 4;' -confexpr 'Global/Mem/L2Cache/access_time = { latency = 10; interval = 2; };' -confexpr 'Global/Mem/L2Cache/access_time_wb = { latency = 10; interval = 2; };' -confexpr 'Global/Mem/use_l3cache = t;' -confexpr 'Global/Mem/L3Cache/size_kb = 4096;' -confexpr 'Global/Mem/L3Cache/assoc = 16;' -confexpr 'Global/Mem/L3Cache/access_time = { latency = 20; interval = 8; };' -confexpr 'Global/Mem/L3Cache/access_time_wb = { latency = 20; interval = 8; };' -confexpr 'Global/Mem/MainMem/read_time = { latency = 250; interval = 100; };' -confexpr 'Global/Mem/MainMem/write_time = { latency = 250; interval = 100; };' -confexpr 'Core/ICache/size_kb = 32;' -confexpr 'Core/ICache/assoc = 1;' -confexpr 'Core/ICache/access_time = { latency = 2; interval = latency; };' -confexpr 'Core/ICache/access_time_wb = { latency = 3; interval = latency; };' -confexpr 'Core/DCache/size_kb = 32;' -confexpr 'Core/DCache/assoc = 1;' -confexpr 'Core/DCache/access_time = { latency = 2; interval = latency; };' -confexpr 'Core/DCache/access_time_wb = { latency = 3; interval = latency; };' -confexpr 'Core/loadstore_queue_size = 24;' -confexpr 'Core/Queue/int_queue_size = 32;' -confexpr 'Core/Queue/float_queue_size = 32;' -confexpr 'Core/Fetch/single_limit = 8;' -confexpr 'Core/Fetch/total_limit = 8;' -confexpr 'Core/Commit/single_limit = 4;' -confexpr 'Core/Commit/total_limit = 4;' -confexpr 'Core/Queue/max_int_issue = 2;' -confexpr 'Core/Queue/max_float_issue = 1;' -confexpr 'Core/Queue/max_ldst_issue = 1;' -confexpr 'Core/Rename/int_rename_regs = 64;' -confexpr 'Core/Rename/float_rename_regs = 64;' -confexpr 'Thread/reorder_buffer_size = 64;' -confexpr 'Thread/active_list_size = 512;' -confexpr 'ResourcePooling/enable = f;' -confdump -
+--Host: chien-VirtualBox, pid: 8258
+--Working directory: /home/chien/Desktop/SMTSIM/benchmarks
+--Local time: Wed May  3 23:26:15 2017
+--Unix time: 1493868375
+--Note: DEBUG support was compiled in.  Assertions are enabled.
+--Loading built-in configuration.
+Loading config file "/home/chien/Desktop/SMTSIM/smtsim-scripts/workloads-list_ffs0.conf"...
+Writing config file "-"...
+--------
+AppStatsLog = {
+  base_name = "/home/chien/Desktop/611Project/results/bwaves_060";
+  enable = t;
+  interval = 10000.;
+  stat_mask = {
+    all = f;
+    app_insts_committed = f;
+    bpred_acc = t;
+    bpred_hr = f;
+    commits = t;
+    cyc = t;
+    dcache_acc = t;
+    dcache_blocks = f;
+    dcache_hr = f;
+    dtlb_acc = t;
+    dtlb_hr = f;
+    fpalu_acc = t;
+    fq_acc = t;
+    fq_occ = t;
+    freg_acc = t;
+    freg_occ = t;
+    fren_acc = t;
+    fren_occ = t;
+    icache_acc = t;
+    icache_blocks = f;
+    icache_hr = f;
+    intalu_acc = t;
+    iq_acc = t;
+    iq_conf = f;
+    iq_occ = t;
+    ireg_acc = t;
+    ireg_occ = t;
+    iren_acc = t;
+    iren_occ = t;
+    itlb_acc = t;
+    itlb_hr = f;
+    l2cache_acc = t;
+    l2cache_blocks = f;
+    l2cache_hr = f;
+    l3cache_acc = t;
+    l3cache_blocks = f;
+    l3cache_hr = t;
+    ldst_acc = t;
+    long_mem_detects = f;
+    long_mem_flushes = f;
+    lsq_acc = t;
+    lsq_occ = t;
+    mem_commits = f;
+    mem_delay = t;
+    retpred_hr = f;
+    rob_acc = t;
+    rob_occ = t;
+    sched_count = f;
+    sched_cyc = f;
+  };
+};
+BasicBlockTracker = {
+  create_bbv_file = f;
+  filename = "";
+  interval = 2e+08;
+};
+Core = {
+  Commit = {
+    single_limit = 4;
+    thread_count_limit = 2;
+    total_limit = 4;
+  };
+  DCache = {
+    access_time = {
+      interval = 2;
+      latency = 2;
+    };
+    access_time_wb = {
+      interval = 3;
+      latency = 3;
+    };
+    assoc = 1;
+    fill_time = {
+      interval = 2;
+      latency = 2;
+    };
+    miss_penalty = 0;
+    n_banks = 8;
+    ports = {
+      r = 0;
+      rw = 1;
+      w = 0;
+    };
+    prefetch_nextblock = f;
+    replace_policy = "LRU";
+    size_kb = 32;
+    track_coher_misses = t;
+    wb_buffer_size = 16;
+  };
+  DataDeadBlock = {
+    dead_block_assoc = 8;
+    dead_block_entries = 1024;
+    enable = f;
+    hist_update_at_commit = f;
+    hist_width = 32;
+  };
+  DataMSHR = {
+    entry_count = 16;
+    max_alloc_per_cyc = 4;
+    waiters_per_entry = 32;
+  };
+  DataStreambuf = {
+    alloc_min_confidence_thresh = 1;
+    always_free_on_match = t;
+    blocks_per_stream = 4;
+    enable = f;
+    force_no_overlap = t;
+    n_streams = 8;
+    predict_match_saturate = 8;
+    predict_miss_saturate = 8;
+    prefetch_as_exclusive = t;
+    prefetch_only_when_quiet = t;
+    stream_priority_age_allocs = 10;
+    stream_priority_saturate = 13;
+    stride_pc_assoc = 4;
+    stride_pc_entries = 256;
+    use_round_robin_sched = f;
+    use_two_miss_alloc_filter = f;
+  };
+  Decode = {
+    n_stages = 1;
+  };
+  ExecTime = {
+    all_extra = 0;
+    fp_arith = 4;
+    fp_bit = 4;
+    fp_compare = 4;
+    fp_condbr = 1;
+    fp_condmove = 4;
+    fp_divs = 17;
+    fp_divt = 30;
+    fp_load = 1;
+    fp_store = 1;
+    ftoi = 2;
+    int_arith = 1;
+    int_compare = 0;
+    int_condbr = 1;
+    int_condmove = 2;
+    int_load = 1;
+    int_mull = 8;
+    int_mulq = 16;
+    int_store = 1;
+    int_umulh = 16;
+    itof = 2;
+    smt_fork = 1;
+    smt_lockrel = 1;
+    smt_terminate = 4;
+    uncond_br = 2;
+  };
+  Fetch = {
+    enable_trace_cache = f;
+    n_stages = 1;
+    single_limit = 8;
+    tcache_skips_to_rename = f;
+    thread_count_limit = 2;
+    total_limit = 8;
+  };
+  ICache = {
+    access_time = {
+      interval = 2;
+      latency = 2;
+    };
+    access_time_wb = {
+      interval = 3;
+      latency = 3;
+    };
+    assoc = 1;
+    fill_time = {
+      interval = 2;
+      latency = 2;
+    };
+    miss_penalty = 0;
+    n_banks = 8;
+    ports = {
+      r = 0;
+      rw = 1;
+      w = 0;
+    };
+    prefetch_nextblock = f;
+    replace_policy = "LRU";
+    size_kb = 32;
+    wb_buffer_size = 16;
+  };
+  InstMSHR = {
+    entry_count = 16;
+    max_alloc_per_cyc = 4;
+    waiters_per_entry = 32;
+  };
+  L2Cache = {
+  };
+  L2MSHR = {
+    entry_count = 32;
+    max_alloc_per_cyc = 4;
+    waiters_per_entry = 4;
+  };
+  MultiBranchPredictor = {
+    n_rows = 2048;
+    predict_width = 3;
+  };
+  Queue = {
+    float_ooo_issue = t;
+    float_queue_size = 32;
+    int_ooo_issue = t;
+    int_queue_size = 32;
+    max_float_issue = 1;
+    max_int_issue = 2;
+    max_ldst_issue = 1;
+    max_sync_issue = 2;
+  };
+  RegRead = {
+    n_stages = 1;
+  };
+  RegWrite = {
+    n_stages = 1;
+  };
+  Rename = {
+    float_rename_regs = 64;
+    int_rename_regs = 64;
+    n_stages = 1;
+  };
+  TraceCache = {
+    assoc = 4;
+    block_insts = 8;
+    is_path_assoc = t;
+    n_entries = 2048;
+    pred_per_block = 3;
+    trim_partial_hits = f;
+  };
+  TraceFillUnit = {
+    align_to_bblock = t;
+    allow_indirect_jumps = t;
+    branch_promote_thresh = 64;
+    output_fifo_len = 10;
+    output_interval = 1;
+  };
+  br_bias_entries = 2048;
+  btb_assoc = 4;
+  btb_entries = 256;
+  dtlb_entries = 128;
+  itlb_entries = 48;
+  loadstore_queue_size = 24;
+  pht_entries = 2048;
+  tlb_filter_invalid = t;
+  tlb_miss_penalty = 160;
+};
+Debug = {
+};
+Global = {
+  Mem = {
+    Coher = {
+      apply_evict_notifies = t;
+      prefer_neighbor_shared = t;
+    };
+    L2Cache = {
+      access_time = {
+        interval = 2;
+        latency = 10;
+      };
+      access_time_wb = {
+        interval = 2;
+        latency = 10;
+      };
+      assoc = 4;
+      fill_time = {
+        interval = 2;
+        latency = 4;
+      };
+      miss_penalty = 0;
+      n_banks = 8;
+      ports = {
+        r = 0;
+        rw = 1;
+        w = 0;
+      };
+      prefetch_nextblock = f;
+      replace_policy = "LRU";
+      size_kb = 128;
+      track_coher_misses = t;
+      wb_buffer_size = 16;
+    };
+    L3Cache = {
+      access_time = {
+        interval = 8;
+        latency = 20;
+      };
+      access_time_wb = {
+        interval = 8;
+        latency = 20;
+      };
+      assoc = 16;
+      fill_time = {
+        interval = 8;
+        latency = 20;
+      };
+      miss_penalty = 0;
+      n_banks = 8;
+      ports = {
+        r = 0;
+        rw = 1;
+        w = 0;
+      };
+      prefetch_nextblock = f;
+      replace_policy = "LRU";
+      size_kb = 4096;
+      wb_buffer_size = 16;
+    };
+    MainMem = {
+      n_banks = 16;
+      read_time = {
+        interval = 100;
+        latency = 250;
+      };
+      write_time = {
+        interval = 100;
+        latency = 250;
+      };
+    };
+    bus_request_time = {
+      interval = 1;
+      latency = 1;
+    };
+    bus_transfer_time = {
+      interval = 2;
+      latency = 4;
+    };
+    cache_block_bytes = 64;
+    cache_request_holders = 256;
+    inst_bytes = 4;
+    page_bytes = 8192;
+    private_l2caches = t;
+    split_bus = f;
+    stack_initial_kb = 64;
+    stack_max_kb = 65536;
+    use_coherence = f;
+    use_l3cache = t;
+  };
+  ThreadCoreMap = {
+    policy = "smt";
+    t0 = 0;
+  };
+  abort_on_alist_full = t;
+  disable_coredump = t;
+  nice_level = 19;
+  num_contexts = 1;
+  num_cores = 1;
+  reap_alist_at_squash = t;
+  thread_length = 1e+07;
+};
+GlobalCtxSchedLog = {
+};
+GlobalLongMemLog = {
+};
+GlobalMemProfiler = {
+  enable = f;
+  log_at_commit = t;
+  log_dstream = t;
+  log_istream = t;
+  log_name = "memprof.gz";
+};
+Hacking = {
+  L1MSHRPartition = {
+    enable = f;
+    max_prefetch_producers = 12;
+  };
+  MutableMap = {
+  };
+  StaticAffin = {
+    force_sched = f;
+  };
+  StaticSched = {
+    allow_missing_apps = f;
+  };
+  consider_late_flush = f;
+  csched_deduct_nonrun = t;
+  flush_past_long_loads = f;
+  flush_past_long_stores = f;
+  inhibit_solo_flush = t;
+  inst_spill_fill = t;
+  inst_spill_fill_early = f;
+  long_mem_at_commit = t;
+  long_mem_cyc = 25;
+  min_swapin_commits = 1.;
+  min_swapin_cyc = 0.;
+  perfect_branch_pred = f;
+  perfect_tlbs = f;
+  print_appmgr_stats = t;
+  sched_app = "OldestApp";
+  sched_ctx = "FirstIdle";
+  spill_dirty_only = f;
+  spill_dtlb_missonly = f;
+  spill_dtlb_size = 0;
+  spill_ghr = f;
+  spill_retstack_size = 0;
+  swap = "IfProcFull";
+  swap_suppress_guess = f;
+  swapgate_deduct_nonrun = t;
+  swapgate_deduct_swapout = f;
+  thread_swapin_cyc = 20;
+  thread_swapout_cyc = 20;
+};
+ResourcePooling = {
+  enable = f;
+  limit_policy = "LIMIT75";
+  order_policy = "FIXED";
+  share_all = f;
+  share_fq = t;
+  share_fregs = t;
+  share_iq = t;
+  share_iregs = t;
+  share_lsq = t;
+  share_rob = t;
+};
+Syscall = {
+  ForceUniqueNames = {
+    "fort.11" = t;
+  };
+  report_resize_failures = t;
+  root_paths_at_cwd = t;
+  sanitize_host_device_info = t;
+  uniquify_to_subdir = t;
+};
+Thread = {
+  active_list_size = 512;
+  discard_static_noops = t;
+  reorder_buffer_size = 64;
+  retstack_entries = 12;
+};
+WorkQueue = {
+  Jobs = {
+    job_1 = {
+      start_time = 0.;
+      workload = "bwaves_06";
+    };
+  };
+  enable = t;
+  exit_on_app_exit = t;
+  max_running_jobs = 1;
+  verbose_sched = t;
+};
+Workloads = {
+  GemsFDTD_06 = {
+    argv = {
+      _0 = "GemsFDTD_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdout = "ref.log";
+  };
+  ammp = {
+    argv = {
+      _0 = "ammp";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "ammp.in";
+    stdout = "ammp.out";
+  };
+  applu = {
+    argv = {
+      _0 = "applu";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "applu.in";
+    stdout = "applu.out";
+  };
+  apsi = {
+    argv = {
+      _0 = "apsi";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "apsi.in";
+    stdout = "apsi.out";
+  };
+  art_110 = {
+    argv = {
+      _0 = "art";
+      _1 = "-scanfile";
+      _10 = "110";
+      _11 = "-starty";
+      _12 = "200";
+      _13 = "-endx";
+      _14 = "160";
+      _15 = "-endy";
+      _16 = "240";
+      _17 = "-objects";
+      _18 = "10";
+      _2 = "c756hel.in";
+      _3 = "-trainfile1";
+      _4 = "a10.img";
+      _5 = "-trainfile2";
+      _6 = "hc.img";
+      _7 = "-stride";
+      _8 = "2";
+      _9 = "-startx";
+      size = 19;
+    };
+    ff_dist = 0.;
+    stdout = "ref.1.out";
+  };
+  art_470 = {
+    argv = {
+      _0 = "art";
+      _1 = "-scanfile";
+      _10 = "470";
+      _11 = "-starty";
+      _12 = "140";
+      _13 = "-endx";
+      _14 = "520";
+      _15 = "-endy";
+      _16 = "180";
+      _17 = "-objects";
+      _18 = "10";
+      _2 = "c756hel.in";
+      _3 = "-trainfile1";
+      _4 = "a10.img";
+      _5 = "-trainfile2";
+      _6 = "hc.img";
+      _7 = "-stride";
+      _8 = "2";
+      _9 = "-startx";
+      size = 19;
+    };
+    ff_dist = 0.;
+    stdout = "ref.2.out";
+  };
+  astar_06_rivers = {
+    argv = {
+      _0 = "astar_base.metallica";
+      _1 = "rivers.cfg";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "rivers.out";
+  };
+  bisort_med = {
+    argv = {
+      _0 = "bisort";
+      _1 = "2500000";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  "bt.big" = {
+    argv = {
+      _0 = "bt.A";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  bwaves_06 = {
+    argv = {
+      _0 = "bwaves_base.metallica";
+      size = 1;
+    };
+    ff_dist = 1e+07;
+  };
+  bzip2_06_chicken = {
+    argv = {
+      _0 = "bzip2_base.metallica";
+      _1 = "chicken.jpg";
+      _2 = "30";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "chicken.jpg.out";
+  };
+  bzip2_graphic = {
+    argv = {
+      _0 = "bzip2";
+      _1 = "bzip2-graphic.in";
+      _2 = "58";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "bzip2-graphic.out";
+  };
+  bzip2_program = {
+    argv = {
+      _0 = "bzip2";
+      _1 = "bzip2-program.in";
+      _2 = "58";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "bzip2-program.out";
+  };
+  bzip2_source = {
+    argv = {
+      _0 = "bzip2";
+      _1 = "bzip2-source.in";
+      _2 = "58";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "bzip2-source.out";
+  };
+  cactusADM_06 = {
+    argv = {
+      _0 = "cactusADM_base.metallica";
+      _1 = "benchADM.par";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "benchADM.out";
+  };
+  calculix_06 = {
+    argv = {
+      _0 = "calculix_base.metallica";
+      _1 = "-i";
+      _2 = "hyperviscoplastic";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "hyperviscoplastic.log";
+  };
+  "cg.big" = {
+    argv = {
+      _0 = "cg.B";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  crafty = {
+    argv = {
+      _0 = "crafty";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "crafty.in";
+    stdout = "crafty.out";
+  };
+  dealII_06 = {
+    argv = {
+      _0 = "dealII_base.metallica";
+      _1 = "23";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "log";
+  };
+  em3d_med = {
+    argv = {
+      _0 = "em3d";
+      _1 = "200000";
+      _2 = "3";
+      _3 = "20";
+      size = 4;
+    };
+    ff_dist = 0.;
+  };
+  eon_cook = {
+    argv = {
+      _0 = "eon";
+      _1 = "chair.control.cook";
+      _2 = "chair.camera";
+      _3 = "chair.surfaces";
+      _4 = "chair.cook.ppm";
+      _5 = "ppm";
+      _6 = "pixels_out.cook";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "cook_log.out";
+  };
+  eon_kajiya = {
+    argv = {
+      _0 = "eon";
+      _1 = "chair.control.kajiya";
+      _2 = "chair.camera";
+      _3 = "chair.surfaces";
+      _4 = "chair.kajiya.ppm";
+      _5 = "ppm";
+      _6 = "pixels_out.kajiya";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "kajiya_log.out";
+  };
+  eon_rushmeier = {
+    argv = {
+      _0 = "eon";
+      _1 = "chair.control.rushmeier";
+      _2 = "chair.camera";
+      _3 = "chair.surfaces";
+      _4 = "chair.rushmeier.ppm";
+      _5 = "ppm";
+      _6 = "pixels_out.rushmeier";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "rushmeier_log.out";
+  };
+  "ep.big" = {
+    argv = {
+      _0 = "ep.C";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  epic = {
+    argv = {
+      _0 = "epic";
+      _1 = "test_image.pgm";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  equake = {
+    argv = {
+      _0 = "equake";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "eqinp.in";
+    stdout = "eqinp.out";
+  };
+  facerec = {
+    argv = {
+      _0 = "facerec";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "ref-facerec.in";
+    stdout = "ref-facerec.out";
+  };
+  fma3d = {
+    argv = {
+      _0 = "fma3d";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "fma3d.in";
+    stdout = "fma3d.out";
+  };
+  "ft.big" = {
+    argv = {
+      _0 = "ft.A";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  g721d = {
+    argv = {
+      _0 = "decode";
+      _1 = "-4";
+      _2 = "-l";
+      _3 = "-f";
+      _4 = "clinton.g721";
+      size = 5;
+    };
+    ff_dist = 0.;
+  };
+  galgel = {
+    argv = {
+      _0 = "galgel";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "galgel.in";
+    stdout = "galgel.out";
+  };
+  gamess_06_cytosine = {
+    argv = {
+      _0 = "gamess_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "cytosine.2.config";
+    stdout = "cytosine.2.out";
+  };
+  gamess_06_triazolium = {
+    argv = {
+      _0 = "gamess_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "triazolium.config";
+    stdout = "triazolium.out";
+  };
+  gap = {
+    argv = {
+      _0 = "gap";
+      _1 = "-l";
+      _2 = "./";
+      _3 = "-q";
+      _4 = "-m";
+      _5 = "192M";
+      size = 6;
+    };
+    ff_dist = 0.;
+    stdin = "ref-gap.in";
+    stdout = "ref-gap.out";
+  };
+  gcc_06_typeck = {
+    argv = {
+      _0 = "gcc_base.metallica";
+      _1 = "c-typeck.i";
+      _2 = "-o";
+      _3 = "c-typeck.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "c-typeck.out";
+  };
+  gcc_166 = {
+    argv = {
+      _0 = "cc1";
+      _1 = "166.i";
+      _2 = "-o";
+      _3 = "166.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "166.out";
+  };
+  gcc_200 = {
+    argv = {
+      _0 = "cc1";
+      _1 = "200.i";
+      _2 = "-o";
+      _3 = "200.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "200.out";
+  };
+  gcc_expr = {
+    argv = {
+      _0 = "cc1";
+      _1 = "expr.i";
+      _2 = "-o";
+      _3 = "expr.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "expr.out";
+  };
+  gcc_integrate = {
+    argv = {
+      _0 = "cc1";
+      _1 = "integrate.i";
+      _2 = "-o";
+      _3 = "integrate.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "integrate.out";
+  };
+  gcc_scilab = {
+    argv = {
+      _0 = "cc1";
+      _1 = "scilab.i";
+      _2 = "-o";
+      _3 = "scilab.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "scilab.out";
+  };
+  gobmk_06_nngs = {
+    argv = {
+      _0 = "gobmk_base.metallica";
+      _1 = "--quiet";
+      _2 = "--mode";
+      _3 = "gtp";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdin = "nngs.tst";
+    stdout = "nngs.out";
+  };
+  gromacs_06 = {
+    argv = {
+      _0 = "gromacs_base.metallica";
+      _1 = "-silent";
+      _2 = "-deffnm";
+      _3 = "gromacs";
+      _4 = "-nice";
+      _5 = "0";
+      size = 6;
+    };
+    ff_dist = 0.;
+  };
+  gzip_graphic = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-graphic.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-graphic.out";
+  };
+  gzip_log = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-log.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-log.out";
+  };
+  gzip_program = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-program.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-program.out";
+  };
+  gzip_source = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-source.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-source.out";
+  };
+  h264ref_06_sss_encoder_main = {
+    argv = {
+      _0 = "h264ref_base.metallica";
+      _1 = "-d";
+      _2 = "sss_encoder_main.cfg";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "sss_main_encodelog.out";
+  };
+  health = {
+    argv = {
+      _0 = "health";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  hmmer_06_nph3 = {
+    argv = {
+      _0 = "hmmer_base.metallica";
+      _1 = "nph3.hmm";
+      _2 = "swiss41";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "nph3.out";
+  };
+  jpege = {
+    argv = {
+      _0 = "cjpeg";
+      _1 = "-dct";
+      _2 = "int";
+      _3 = "-progressive";
+      _4 = "-opt";
+      _5 = "-outfile";
+      _6 = "teste";
+      _7 = "monalisa.ppm";
+      size = 8;
+    };
+    ff_dist = 0.;
+  };
+  lbm_06 = {
+    argv = {
+      _0 = "lbm_base.metallica";
+      _1 = "3000";
+      _2 = "reference.dat";
+      _3 = "0";
+      _4 = "0";
+      _5 = "100_100_130_ldc.of";
+      size = 6;
+    };
+    ff_dist = 0.;
+    stdout = "lbm.out";
+  };
+  leslie3d_06 = {
+    argv = {
+      _0 = "leslie3d_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "leslie3d.in";
+    stdout = "leslie3d.stdout";
+  };
+  libquantum_06 = {
+    argv = {
+      _0 = "libquantum_base.metallica";
+      _1 = "1397";
+      _2 = "8";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "ref.out";
+  };
+  lucas = {
+    argv = {
+      _0 = "lucas";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "lucas2.in";
+    stdout = "lucas2.out";
+  };
+  mcf = {
+    argv = {
+      _0 = "mcf";
+      _1 = "inp-mcf.in";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "inp-mcf.out";
+  };
+  mcf_06 = {
+    argv = {
+      _0 = "mcf_base.metallica";
+      _1 = "inp.in";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "inp.out";
+  };
+  mesa = {
+    argv = {
+      _0 = "mesa";
+      _1 = "-frames";
+      _2 = "1000";
+      _3 = "-meshfile";
+      _4 = "mesa.in";
+      _5 = "-ppmfile";
+      _6 = "mesa.ppm";
+      size = 7;
+    };
+    ff_dist = 0.;
+  };
+  mesa_texgen = {
+    argv = {
+      _0 = "texgen";
+      _1 = "c";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  "mg.big" = {
+    argv = {
+      _0 = "mg.B";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  mgrid = {
+    argv = {
+      _0 = "mgrid";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "mgrid.in";
+    stdout = "mgrid.out";
+  };
+  milc_06 = {
+    argv = {
+      _0 = "milc_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "su3imp.in";
+    stdout = "su3imp.out";
+  };
+  mst = {
+    argv = {
+      _0 = "mst";
+      _1 = "2048";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  namd_06 = {
+    argv = {
+      _0 = "namd_base.metallica";
+      _1 = "--input";
+      _2 = "namd.input";
+      _3 = "--iterations";
+      _4 = "38";
+      _5 = "--output";
+      _6 = "namd.out";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "namd.stdout";
+  };
+  omnetpp_06 = {
+    argv = {
+      _0 = "omnetpp_base.metallica";
+      _1 = "omnetpp.ini";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "omnetpp.log";
+  };
+  parser = {
+    argv = {
+      _0 = "parser";
+      _1 = "2.1.dict";
+      _2 = "-batch";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdin = "ref-parser.in";
+    stdout = "ref-parser.out";
+  };
+  perim_big = {
+    argv = {
+      _0 = "perimeter";
+      _1 = "12";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  perlbench_06_checkspam = {
+    argv = {
+      _0 = "perlbench_base.metallica";
+      _1 = "-I./lib";
+      _10 = "1";
+      _11 = "1";
+      _2 = "checkspam.pl";
+      _3 = "2500";
+      _4 = "5";
+      _5 = "25";
+      _6 = "11";
+      _7 = "150";
+      _8 = "1";
+      _9 = "1";
+      size = 12;
+    };
+    ff_dist = 0.;
+    stdout = "checkspam.2500.5.25.11.150.1.1.1.1.out";
+  };
+  perlbmk_diffmail = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "diffmail.pl";
+      _3 = "2";
+      _4 = "550";
+      _5 = "15";
+      _6 = "24";
+      _7 = "23";
+      _8 = "100";
+      size = 9;
+    };
+    ff_dist = 0.;
+    stdout = "2.550.15.24.23.100.out";
+  };
+  perlbmk_makerand = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I.";
+      _2 = "-I./lib";
+      _3 = "makerand.pl";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "makerand.out";
+  };
+  perlbmk_perfect = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "perfect.pl";
+      _3 = "b";
+      _4 = "3";
+      _5 = "m";
+      _6 = "4";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "b.3.m.4.out";
+  };
+  perlbmk_splitmail535 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "535";
+      _4 = "13";
+      _5 = "25";
+      _6 = "24";
+      _7 = "1091";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "535.13.25.24.1091.out";
+  };
+  perlbmk_splitmail704 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "704";
+      _4 = "12";
+      _5 = "26";
+      _6 = "16";
+      _7 = "836";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "704.12.26.16.836.out";
+  };
+  perlbmk_splitmail850 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "850";
+      _4 = "5";
+      _5 = "19";
+      _6 = "18";
+      _7 = "1500";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "850.5.19.18.1500.out";
+  };
+  perlbmk_splitmail957 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "957";
+      _4 = "12";
+      _5 = "23";
+      _6 = "26";
+      _7 = "1014";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "957.12.23.26.1014.out";
+  };
+  povray_06 = {
+    argv = {
+      _0 = "povray_base.metallica";
+      _1 = "SPEC-benchmark-ref.ini";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "SPEC-benchmark-ref.stdout";
+  };
+  sixtrack = {
+    argv = {
+      _0 = "sixtrack";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "inp-sixtrack.in";
+    stdout = "inp-sixtrack.out";
+  };
+  sjeng_06 = {
+    argv = {
+      _0 = "sjeng_base.metallica";
+      _1 = "ref.txt";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "ref.out";
+  };
+  soplex_06_pds_50 = {
+    argv = {
+      _0 = "soplex_base.metallica";
+      _1 = "-s1";
+      _2 = "-e";
+      _3 = "-m45000";
+      _4 = "pds_50.mps";
+      size = 5;
+    };
+    ff_dist = 0.;
+    stdout = "pds-50.mps.out";
+  };
+  soplex_06_ref = {
+    argv = {
+      _0 = "soplex_base.metallica";
+      _1 = "-m3500";
+      _2 = "ref.mps";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "ref.out";
+  };
+  "sp.big" = {
+    argv = {
+      _0 = "sp.B";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  sphinx3_06 = {
+    argv = {
+      _0 = "sphinx_livepretend_base.metallica";
+      _1 = "ctlfile";
+      _2 = ".";
+      _3 = "args.an4";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "an4.log";
+  };
+  swim = {
+    argv = {
+      _0 = "swim";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "swim.in";
+    stdout = "swim.out";
+  };
+  treeadd = {
+    argv = {
+      _0 = "treeadd";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  twolf = {
+    argv = {
+      _0 = "twolf";
+      _1 = "ref";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "ref-twolf.out";
+  };
+  vortex_1 = {
+    argv = {
+      _0 = "vortex";
+      _1 = "lendian1.raw";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  vortex_2 = {
+    argv = {
+      _0 = "vortex";
+      _1 = "lendian2.raw";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  vortex_3 = {
+    argv = {
+      _0 = "vortex";
+      _1 = "lendian3.raw";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  vpr_place = {
+    argv = {
+      _0 = "vpr";
+      _1 = "net.in";
+      _10 = "0.005";
+      _11 = "-alpha_t";
+      _12 = "0.9412";
+      _13 = "-inner_num";
+      _14 = "2";
+      _2 = "arch.in";
+      _3 = "place.out";
+      _4 = "dum.out";
+      _5 = "-nodisp";
+      _6 = "-place_only";
+      _7 = "-init_t";
+      _8 = "5";
+      _9 = "-exit_t";
+      size = 15;
+    };
+    ff_dist = 0.;
+    stdout = "vpr_place.out";
+  };
+  vpr_route = {
+    argv = {
+      _0 = "vpr";
+      _1 = "net.in";
+      _10 = "2";
+      _11 = "-acc_fac";
+      _12 = "1";
+      _13 = "-first_iter_pres_fac";
+      _14 = "4";
+      _15 = "-initial_pres_fac";
+      _16 = "8";
+      _2 = "arch.in";
+      _3 = "place.in";
+      _4 = "route.out";
+      _5 = "-nodisp";
+      _6 = "-route_only";
+      _7 = "-route_chan_width";
+      _8 = "15";
+      _9 = "-pres_fac_mult";
+      size = 17;
+    };
+    ff_dist = 0.;
+    stdout = "vpr-route.out";
+  };
+  wupwise = {
+    argv = {
+      _0 = "wupwise";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdout = "wupwise.out";
+  };
+  zeusmp_06 = {
+    argv = {
+      _0 = "zeusmp_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdout = "zeusmp.stdout";
+  };
+};
+--------
+Contexts: 1, cores: 1
+  context 0 on core 0
+Printing Pooled Resources:
+  ROB  64 
+   IQ  32 
+   FQ  32 
+ IREG  64 
+ FREG  64 
+  LSQ  24 
+
+--Startup complete; beginning simulation.
+WorkQueue::sim_prestart_jobs: pre-starting jobs: 0
+App A0: (bwaves_base.metallica)
+--Logging A0 stats every 10000 cyc to "/home/chien/Desktop/611Project/results/bwaves_060.A0": cyc commits l3cache_hr mem_delay itlb_acc dtlb_acc icache_acc dcache_acc l2cache_acc l3cache_acc bpred_acc intalu_acc fpalu_acc ldst_acc iq_acc fq_acc ireg_acc freg_acc iren_acc fren_acc lsq_acc rob_acc iq_occ fq_occ ireg_occ freg_occ lsq_occ rob_occ
+--Fast-forwarding app A0 for 10000000 insts...
+--FF'd 10000000 insts in 0.6280/0.000/0.6290(99.84%) sec: 1.592e+07 inst/s
+WorkQueue: job 0 "WorkQueue/Jobs/job_1" started at time 0, initial apps [ 0 ]
+Printing Pooled Resources:
+  ROB  48 
+   IQ  24 
+   FQ  24 
+ IREG  48 
+ FREG  48 
+  LSQ  18 
+
+appmgr: A0 swap-in C0 T0 final_fill_commit at 39; swapin delay 39 (targfetch) 39 (fillcommit), migrate delay -1 (tf) 1 (fc)
+cyc: 36180, instr: 10005 
+cyc: 68945, instr: 20007 
+cyc: 101406, instr: 30001 
+cyc: 134101, instr: 40004 
+cyc: 168808, instr: 50006 
+cyc: 201232, instr: 60001 
+cyc: 234317, instr: 70007 
+cyc: 266957, instr: 80002 
+cyc: 299433, instr: 90003 
+cyc: 332008, instr: 100001 
+cyc: 364873, instr: 110004 
+cyc: 397344, instr: 120002 
+cyc: 430211, instr: 130004 
+cyc: 462621, instr: 140005 
+cyc: 495493, instr: 150008 
+cyc: 528053, instr: 160006 
+cyc: 561033, instr: 170008 
+cyc: 593106, instr: 180002 
+cyc: 626196, instr: 190004 
+cyc: 658686, instr: 200002 
+cyc: 691664, instr: 210004 
+cyc: 724025, instr: 220006 
+cyc: 756583, instr: 230004 
+cyc: 789311, instr: 240006 
+cyc: 822306, instr: 250008 
+cyc: 854907, instr: 260002 
+cyc: 887466, instr: 270004 
+cyc: 919957, instr: 280003 
+cyc: 953106, instr: 290001 
+cyc: 985439, instr: 300004 
+cyc: 1018234, instr: 310002 
+cyc: 1050646, instr: 320007 
+cyc: 1083200, instr: 330005 
+cyc: 1116302, instr: 340008 
+cyc: 1148552, instr: 350006 
+cyc: 1181481, instr: 360001 
+cyc: 1214137, instr: 370002 
+cyc: 1246781, instr: 380004 
+cyc: 1279430, instr: 390003 
+cyc: 1312211, instr: 400001 
+cyc: 1345134, instr: 410003 
+cyc: 1377375, instr: 420004 
+cyc: 1410085, instr: 430007 
+cyc: 1442592, instr: 440005 
+cyc: 1475626, instr: 450007 
+cyc: 1508004, instr: 460001 
+cyc: 1540653, instr: 470003 
+cyc: 1573371, instr: 480001 
+cyc: 1606075, instr: 490003 
+cyc: 1638714, instr: 500005 
+cyc: 1671311, instr: 510007 
+cyc: 1704307, instr: 520005 
+cyc: 1736415, instr: 530008 
+cyc: 1769423, instr: 540006 
+cyc: 1802000, instr: 550001 
+cyc: 1834648, instr: 560002 
+cyc: 1867290, instr: 570004 
+cyc: 1900188, instr: 580003 
+cyc: 1932508, instr: 590001 
+cyc: 1965171, instr: 600006 
+cyc: 1997963, instr: 610004 
+cyc: 2030518, instr: 620007 
+cyc: 2063459, instr: 630005 
+cyc: 2096167, instr: 640008 
+cyc: 2128680, instr: 650001 
+cyc: 2161302, instr: 660003 
+cyc: 2194080, instr: 670002 
+cyc: 2226850, instr: 680004 
+cyc: 2259213, instr: 690002 
+cyc: 2291924, instr: 700003 
+cyc: 2324482, instr: 710006 
+cyc: 2357466, instr: 720004 
+cyc: 2389950, instr: 730006 
+cyc: 2422394, instr: 740007 
+cyc: 2455219, instr: 750002 
+cyc: 2488149, instr: 760004 
+cyc: 2520392, instr: 770003 
+cyc: 2553441, instr: 780001 
+cyc: 2585784, instr: 790006 
+cyc: 2618775, instr: 800004 
+cyc: 2651351, instr: 810007 
+cyc: 2683612, instr: 820005 
+cyc: 2716717, instr: 830008 
+cyc: 2749397, instr: 840001 
+cyc: 2782049, instr: 850003 
+cyc: 2814453, instr: 860002 
+cyc: 2847367, instr: 870004 
+cyc: 2879838, instr: 880005 
+cyc: 2912561, instr: 890003 
+cyc: 2945272, instr: 900006 
+cyc: 2977803, instr: 910004 
+cyc: 3010811, instr: 920007 
+cyc: 3043082, instr: 930007 
+cyc: 3075722, instr: 940002 
+cyc: 3108491, instr: 950001 
+cyc: 3141456, instr: 960003 
+cyc: 3173869, instr: 970001 
+cyc: 3206469, instr: 980002 
+cyc: 3239318, instr: 990004 
+cyc: 3271803, instr: 1000007 
+cyc: 3304754, instr: 1010005 
+cyc: 3336960, instr: 1020006 
+cyc: 3369694, instr: 1030001 
+cyc: 3402418, instr: 1040003 
+cyc: 3435432, instr: 1050002 
+cyc: 3467701, instr: 1060004 
+cyc: 3500578, instr: 1070005 
+cyc: 3533073, instr: 1080003 
+cyc: 3566066, instr: 1090006 
+cyc: 3598324, instr: 1100004 
+cyc: 3631105, instr: 1110007 
+cyc: 3663950, instr: 1120007 
+cyc: 3696588, instr: 1130002 
+cyc: 3729459, instr: 1140001 
+cyc: 3762001, instr: 1150003 
+cyc: 3794439, instr: 1160004 
+cyc: 3827352, instr: 1170002 
+cyc: 3859910, instr: 1180005 
+cyc: 3892753, instr: 1190003 
+cyc: 3925106, instr: 1200006 
+cyc: 3957546, instr: 1210008 
+cyc: 3990761, instr: 1220005 
+cyc: 4023406, instr: 1230007 
+cyc: 4055726, instr: 1240002 
+cyc: 4088679, instr: 1250004 
+cyc: 4120999, instr: 1260001 
+cyc: 4154080, instr: 1270003 
+cyc: 4186578, instr: 1280006 
+cyc: 4218838, instr: 1290004 
+cyc: 4251804, instr: 1300005 
+cyc: 4284409, instr: 1310007 
+cyc: 4316949, instr: 1320002 
+cyc: 4349597, instr: 1330001 
+cyc: 4382609, instr: 1340003 
+cyc: 4415018, instr: 1350004 
+cyc: 4447428, instr: 1360002 
+cyc: 4480301, instr: 1370005 
+cyc: 4512851, instr: 1380003 
+cyc: 4546108, instr: 1390006 
+cyc: 4578323, instr: 1400006 
+cyc: 4610950, instr: 1410001 
+cyc: 4643661, instr: 1420007 
+cyc: 4676533, instr: 1430002 
+cyc: 4709181, instr: 1440004 
+cyc: 4741850, instr: 1450003 
+cyc: 4774720, instr: 1460005 
+cyc: 4806903, instr: 1470002 
+cyc: 4840009, instr: 1480004 
+cyc: 4872441, instr: 1490008 
+cyc: 4905047, instr: 1500004 
+cyc: 4937768, instr: 1510006 
+cyc: 4970558, instr: 1520001 
+cyc: 5002877, instr: 1530003 
+cyc: 5035674, instr: 1540008 
+cyc: 5068156, instr: 1550002 
+cyc: 5101256, instr: 1560005 
+cyc: 5133673, instr: 1570003 
+cyc: 5166575, instr: 1580004 
+cyc: 5198839, instr: 1590006 
+cyc: 5231388, instr: 1600001 
+cyc: 5264490, instr: 1610007 
+cyc: 5297098, instr: 1620002 
+cyc: 5329757, instr: 1630003 
+cyc: 5362356, instr: 1640001 
+cyc: 5394916, instr: 1650004 
+cyc: 5427981, instr: 1660002 
+cyc: 5461069, instr: 1670004 
+cyc: 5493448, instr: 1680007 
+cyc: 5527392, instr: 1690001 
+cyc: 5560773, instr: 1700008 
+cyc: 5594291, instr: 1710005 
+cyc: 5627312, instr: 1720001 
+cyc: 5660686, instr: 1730003 
+cyc: 5694569, instr: 1740004 
+cyc: 5727694, instr: 1750001 
+cyc: 5761093, instr: 1760003 
+cyc: 5794509, instr: 1770007 
+cyc: 5828366, instr: 1780003 
+cyc: 5861639, instr: 1790005 
+cyc: 5895226, instr: 1800007 
+cyc: 5929083, instr: 1810002 
+cyc: 5962769, instr: 1820007 
+cyc: 5996626, instr: 1830001 
+cyc: 6030140, instr: 1840004 
+cyc: 6064243, instr: 1850002 
+cyc: 6097969, instr: 1860003 
+cyc: 6131623, instr: 1870005 
+cyc: 6165260, instr: 1880008 
+cyc: 6199045, instr: 1890006 
+cyc: 6233342, instr: 1900001 
+cyc: 6266694, instr: 1910002 
+cyc: 6300432, instr: 1920002 
+cyc: 6334442, instr: 1930004 
+cyc: 6367865, instr: 1940003 
+cyc: 6401825, instr: 1950002 
+cyc: 6435416, instr: 1960004 
+cyc: 6469069, instr: 1970006 
+cyc: 6502849, instr: 1980008 
+cyc: 6536718, instr: 1990004 
+cyc: 6570324, instr: 2000008 
+cyc: 6604009, instr: 2010002 
+cyc: 6637539, instr: 2020003 
+cyc: 6671692, instr: 2030008 
+cyc: 6705066, instr: 2040002 
+cyc: 6739087, instr: 2050006 
+cyc: 6772536, instr: 2060002 
+cyc: 6806355, instr: 2070004 
+cyc: 6840192, instr: 2080006 
+cyc: 6873591, instr: 2090001 
+cyc: 6907682, instr: 2100006 
+cyc: 6941525, instr: 2110008 
+cyc: 6975207, instr: 2120003 
+cyc: 7009231, instr: 2130001 
+cyc: 7042659, instr: 2140008 
+cyc: 7076339, instr: 2150005 
+cyc: 7110263, instr: 2160005 
+cyc: 7144394, instr: 2170007 
+cyc: 7177955, instr: 2180001 
+cyc: 7211187, instr: 2190001 
+cyc: 7245138, instr: 2200007 
+cyc: 7279088, instr: 2210001 
+cyc: 7312925, instr: 2220003 
+cyc: 7347247, instr: 2230001 
+cyc: 7381456, instr: 2240007 
+cyc: 7415229, instr: 2250002 
+cyc: 7448968, instr: 2260001 
+cyc: 7482526, instr: 2270003 
+cyc: 7516115, instr: 2280004 
+cyc: 7550162, instr: 2290002 
+cyc: 7583612, instr: 2300005 
+cyc: 7617617, instr: 2310003 
+cyc: 7651096, instr: 2320005 
+cyc: 7684841, instr: 2330006 
+cyc: 7718624, instr: 2340001 
+cyc: 7752513, instr: 2350007 
+cyc: 7786535, instr: 2360001 
+cyc: 7820022, instr: 2370002 
+cyc: 7853536, instr: 2380005 
+cyc: 7887474, instr: 2390003 
+cyc: 7921414, instr: 2400006 
+cyc: 7954804, instr: 2410004 
+cyc: 7988668, instr: 2420001 
+cyc: 8022126, instr: 2430007 
+cyc: 8056326, instr: 2440002 
+cyc: 8089751, instr: 2450001 
+cyc: 8123871, instr: 2460003 
+cyc: 8157147, instr: 2470004 
+cyc: 8190739, instr: 2480002 
+cyc: 8224789, instr: 2490005 
+cyc: 8258537, instr: 2500003 
+cyc: 8292247, instr: 2510008 
+cyc: 8325980, instr: 2520006 
+cyc: 8359649, instr: 2530001 
+cyc: 8393530, instr: 2540007 
+cyc: 8427065, instr: 2550002 
+cyc: 8460880, instr: 2560003 
+cyc: 8494467, instr: 2570001 
+cyc: 8528336, instr: 2580004 
+cyc: 8562140, instr: 2590002 
+cyc: 8596475, instr: 2600004 
+cyc: 8629681, instr: 2610005 
+cyc: 8663475, instr: 2620007 
+cyc: 8697323, instr: 2630002 
+cyc: 8731281, instr: 2640001 
+cyc: 8764635, instr: 2650001 
+cyc: 8798472, instr: 2660004 
+cyc: 8832085, instr: 2670002 
+cyc: 8866350, instr: 2680005 
+cyc: 8899898, instr: 2690003 
+cyc: 8932983, instr: 2700008 
+cyc: 8967094, instr: 2710006 
+cyc: 9000994, instr: 2720001 
+cyc: 9034709, instr: 2730007 
+cyc: 9068204, instr: 2740002 
+cyc: 9102065, instr: 2750003 
+cyc: 9135719, instr: 2760001 
+cyc: 9169335, instr: 2770004 
+cyc: 9203198, instr: 2780002 
+cyc: 9236642, instr: 2790007 
+cyc: 9271013, instr: 2800005 
+cyc: 9304486, instr: 2810008 
+cyc: 9338030, instr: 2820006 
+cyc: 9372051, instr: 2830001 
+cyc: 9405816, instr: 2840003 
+cyc: 9439474, instr: 2850008 
+cyc: 9473362, instr: 2860002 
+cyc: 9507139, instr: 2870005 
+cyc: 9540547, instr: 2880003 
+cyc: 9574481, instr: 2890004 
+cyc: 9608078, instr: 2900006 
+cyc: 9642202, instr: 2910001 
+cyc: 9675550, instr: 2920007 
+cyc: 9709577, instr: 2930008 
+cyc: 9742899, instr: 2940003 
+cyc: 9776767, instr: 2950001 
+cyc: 9810712, instr: 2960004 
+cyc: 9844313, instr: 2970002 
+cyc: 9877964, instr: 2980007 
+cyc: 9911794, instr: 2990005 
+cyc: 9945586, instr: 3000008 
+cyc: 9979408, instr: 3010006 
+cyc: 10013215, instr: 3020001 
+cyc: 10046588, instr: 3030002 
+cyc: 10080615, instr: 3040004 
+cyc: 10114400, instr: 3050003 
+cyc: 10147745, instr: 3060001 
+cyc: 10181838, instr: 3070007 
+cyc: 10215609, instr: 3080006 
+cyc: 10249297, instr: 3090003 
+cyc: 10283305, instr: 3100005 
+cyc: 10316985, instr: 3110007 
+cyc: 10350586, instr: 3120002 
+cyc: 10384168, instr: 3130007 
+cyc: 10417832, instr: 3140001 
+cyc: 10452013, instr: 3150004 
+cyc: 10485499, instr: 3160002 
+cyc: 10518897, instr: 3170003 
+cyc: 10552834, instr: 3180005 
+cyc: 10586599, instr: 3190008 
+cyc: 10620295, instr: 3200006 
+cyc: 10653614, instr: 3210007 
+cyc: 10687763, instr: 3220002 
+cyc: 10721504, instr: 3230004 
+cyc: 10755151, instr: 3240003 
+cyc: 10789047, instr: 3250001 
+cyc: 10822222, instr: 3260006 
+cyc: 10856710, instr: 3270004 
+cyc: 10890204, instr: 3280007 
+cyc: 10923946, instr: 3290005 
+cyc: 10957821, instr: 3300007 
+cyc: 10991332, instr: 3310002 
+cyc: 11025269, instr: 3320001 
+cyc: 11059081, instr: 3330003 
+cyc: 11093000, instr: 3340008 
+cyc: 11126582, instr: 3350004 
+cyc: 11160306, instr: 3360006 
+cyc: 11194138, instr: 3370002 
+cyc: 11227965, instr: 3380004 
+cyc: 11261457, instr: 3390006 
+cyc: 11295350, instr: 3400001 
+cyc: 11328813, instr: 3410006 
+cyc: 11362955, instr: 3420008 
+cyc: 11396505, instr: 3430003 
+cyc: 11430284, instr: 3440005 
+cyc: 11463900, instr: 3450002 
+cyc: 11497621, instr: 3460004 
+cyc: 11531319, instr: 3470007 
+cyc: 11565217, instr: 3480005 
+cyc: 11598663, instr: 3490006 
+cyc: 11632454, instr: 3500001 
+cyc: 11666426, instr: 3510003 
+cyc: 11700092, instr: 3520002 
+cyc: 11733911, instr: 3530004 
+cyc: 11767848, instr: 3540003 
+cyc: 11801319, instr: 3550005 
+cyc: 11834855, instr: 3560007 
+cyc: 11869162, instr: 3570006 
+cyc: 11902568, instr: 3580005 
+cyc: 11936406, instr: 3590007 
+cyc: 11969969, instr: 3600001 
+cyc: 12003679, instr: 3610002 
+cyc: 12037848, instr: 3620007 
+cyc: 12071086, instr: 3630003 
+cyc: 12104845, instr: 3640005 
+cyc: 12138647, instr: 3650001 
+cyc: 12172555, instr: 3660003 
+cyc: 12206194, instr: 3670005 
+cyc: 12239634, instr: 3680001 
+cyc: 12273835, instr: 3690005 
+cyc: 12307288, instr: 3700007 
+cyc: 12341303, instr: 3710002 
+cyc: 12374618, instr: 3720004 
+cyc: 12408270, instr: 3730001 
+cyc: 12442523, instr: 3740003 
+cyc: 12475976, instr: 3750006 
+cyc: 12509708, instr: 3760004 
+cyc: 12543635, instr: 3770003 
+cyc: 12577509, instr: 3780008 
+cyc: 12611349, instr: 3790008 
+cyc: 12644723, instr: 3800002 
+cyc: 12678968, instr: 3810001 
+cyc: 12712259, instr: 3820004 
+cyc: 12746386, instr: 3830002 
+cyc: 12779922, instr: 3840004 
+cyc: 12813585, instr: 3850006 
+cyc: 12847173, instr: 3860004 
+cyc: 12881087, instr: 3870006 
+cyc: 12914727, instr: 3880008 
+cyc: 12948561, instr: 3890001 
+cyc: 12982109, instr: 3900006 
+cyc: 13015914, instr: 3910002 
+cyc: 13049539, instr: 3920004 
+cyc: 13083597, instr: 3930005 
+cyc: 13117031, instr: 3940002 
+cyc: 13150902, instr: 3950004 
+cyc: 13184413, instr: 3960008 
+cyc: 13218216, instr: 3970004 
+cyc: 13252184, instr: 3980006 
+cyc: 13285806, instr: 3990001 
+cyc: 13319405, instr: 4000004 
+cyc: 13353679, instr: 4010006 
+cyc: 13387037, instr: 4020003 
+cyc: 13420835, instr: 4030003 
+cyc: 13454646, instr: 4040005 
+cyc: 13488224, instr: 4050004 
+cyc: 13522224, instr: 4060007 
+cyc: 13555755, instr: 4070005 
+cyc: 13589753, instr: 4080007 
+cyc: 13623552, instr: 4090001 
+cyc: 13657279, instr: 4100003 
+cyc: 13690515, instr: 4110001 
+cyc: 13724528, instr: 4120003 
+cyc: 13758698, instr: 4130005 
+cyc: 13791677, instr: 4140003 
+cyc: 13825731, instr: 4150005 
+cyc: 13859598, instr: 4160007 
+cyc: 13893481, instr: 4170001 
+cyc: 13927086, instr: 4180005 
+cyc: 13960386, instr: 4190001 
+cyc: 13994277, instr: 4200003 
+cyc: 14028244, instr: 4210004 
+cyc: 14061987, instr: 4220001 
+cyc: 14095638, instr: 4230003 
+cyc: 14129364, instr: 4240007 
+cyc: 14163200, instr: 4250001 
+cyc: 14197021, instr: 4260003 
+cyc: 14230809, instr: 4270008 
+cyc: 14264484, instr: 4280001 
+cyc: 14297858, instr: 4290003 
+cyc: 14332158, instr: 4300002 
+cyc: 14365702, instr: 4310004 
+cyc: 14399423, instr: 4320002 
+cyc: 14433084, instr: 4330003 
+cyc: 14466891, instr: 4340006 
+cyc: 14500588, instr: 4350004 
+cyc: 14534348, instr: 4360006 
+cyc: 14568308, instr: 4370008 
+cyc: 14601791, instr: 4380002 
+cyc: 14635446, instr: 4390008 
+cyc: 14669393, instr: 4400002 
+cyc: 14702845, instr: 4410004 
+cyc: 14736869, instr: 4420002 
+cyc: 14770192, instr: 4430004 
+cyc: 14804373, instr: 4440006 
+cyc: 14837950, instr: 4450008 
+cyc: 14871691, instr: 4460004 
+cyc: 14905273, instr: 4470008 
+cyc: 14939401, instr: 4480002 
+cyc: 14972842, instr: 4490004 
+cyc: 15006618, instr: 4500006 
+cyc: 15040525, instr: 4510003 
+cyc: 15074237, instr: 4520003 
+cyc: 15107706, instr: 4530006 
+cyc: 15141695, instr: 4540004 
+cyc: 15175393, instr: 4550007 
+cyc: 15209209, instr: 4560007 
+cyc: 15243028, instr: 4570002 
+cyc: 15276183, instr: 4580001 
+cyc: 15310437, instr: 4590003 
+cyc: 15344378, instr: 4600001 
+cyc: 15377675, instr: 4610002 
+cyc: 15411365, instr: 4620005 
+cyc: 15445113, instr: 4630003 
+cyc: 15479050, instr: 4640005 
+cyc: 15512663, instr: 4650007 
+cyc: 15546243, instr: 4660001 
+cyc: 15580005, instr: 4670007 
+cyc: 15613767, instr: 4680001 
+cyc: 15647642, instr: 4690003 
+cyc: 15681235, instr: 4700001 
+cyc: 15715089, instr: 4710003 
+cyc: 15748984, instr: 4720005 
+cyc: 15782591, instr: 4730007 
+cyc: 15816355, instr: 4740001 
+cyc: 15850051, instr: 4750007 
+cyc: 15883438, instr: 4760002 
+cyc: 15917625, instr: 4770001 
+cyc: 15951241, instr: 4780003 
+cyc: 15985359, instr: 4790002 
+cyc: 16018651, instr: 4800002 
+cyc: 16052842, instr: 4810005 
+cyc: 16086164, instr: 4820003 
+cyc: 16120460, instr: 4830006 
+cyc: 16153677, instr: 4840006 
+cyc: 16187289, instr: 4850001 
+cyc: 16221345, instr: 4860007 
+cyc: 16254935, instr: 4870002 
+cyc: 16288911, instr: 4880008 
+cyc: 16322588, instr: 4890001 
+cyc: 16356225, instr: 4900004 
+cyc: 16390010, instr: 4910002 
+cyc: 16423628, instr: 4920004 
+cyc: 16457065, instr: 4930005 
+cyc: 16490871, instr: 4940008 
+cyc: 16525049, instr: 4950006 
+cyc: 16558368, instr: 4960008 
+cyc: 16592227, instr: 4970002 
+cyc: 16625765, instr: 4980004 
+cyc: 16659833, instr: 4990002 
+cyc: 16693478, instr: 5000005 
+cyc: 16727412, instr: 5010003 
+cyc: 16760873, instr: 5020006 
+cyc: 16794767, instr: 5030006 
+cyc: 16828693, instr: 5040001 
+cyc: 16861864, instr: 5050007 
+cyc: 16896267, instr: 5060002 
+cyc: 16929803, instr: 5070003 
+cyc: 16963462, instr: 5080001 
+cyc: 16997019, instr: 5090004 
+cyc: 17030838, instr: 5100002 
+cyc: 17064992, instr: 5110005 
+cyc: 17098218, instr: 5120005 
+cyc: 17132059, instr: 5130008 
+cyc: 17165701, instr: 5140006 
+cyc: 17199989, instr: 5150001 
+cyc: 17233454, instr: 5160007 
+cyc: 17267029, instr: 5170004 
+cyc: 17300715, instr: 5180003 
+cyc: 17334654, instr: 5190001 
+cyc: 17368396, instr: 5200003 
+cyc: 17402009, instr: 5210004 
+cyc: 17435859, instr: 5220006 
+cyc: 17469194, instr: 5230001 
+cyc: 17503365, instr: 5240007 
+cyc: 17537156, instr: 5250002 
+cyc: 17570374, instr: 5260006 
+cyc: 17604046, instr: 5270008 
+cyc: 17638159, instr: 5280004 
+cyc: 17671626, instr: 5290006 
+cyc: 17705860, instr: 5300001 
+cyc: 17738962, instr: 5310003 
+cyc: 17773131, instr: 5320008 
+cyc: 17806739, instr: 5330002 
+cyc: 17840407, instr: 5340005 
+cyc: 17873974, instr: 5350002 
+cyc: 17907745, instr: 5360004 
+cyc: 17941406, instr: 5370006 
+cyc: 17975325, instr: 5380001 
+cyc: 18009187, instr: 5390007 
+cyc: 18042619, instr: 5400001 
+cyc: 18076418, instr: 5410001 
+cyc: 18110487, instr: 5420003 
+cyc: 18144028, instr: 5430005 
+cyc: 18177699, instr: 5440004 
+cyc: 18211649, instr: 5450003 
+cyc: 18245081, instr: 5460005 
+cyc: 18278970, instr: 5470007 
+cyc: 18312701, instr: 5480001 
+cyc: 18346403, instr: 5490007 
+cyc: 18380392, instr: 5500001 
+cyc: 18413866, instr: 5510003 
+cyc: 18447476, instr: 5520004 
+cyc: 18481567, instr: 5530001 
+cyc: 18515545, instr: 5540005 
+cyc: 18548930, instr: 5550007 
+cyc: 18582512, instr: 5560003 
+cyc: 18616665, instr: 5570005 
+cyc: 18650380, instr: 5580007 
+cyc: 18683986, instr: 5590002 
+cyc: 18717455, instr: 5600007 
+cyc: 18751291, instr: 5610001 
+cyc: 18785336, instr: 5620004 
+cyc: 18819011, instr: 5630007 
+cyc: 18852759, instr: 5640001 
+cyc: 18886582, instr: 5650006 
+cyc: 18920099, instr: 5660006 
+cyc: 18954130, instr: 5670008 
+cyc: 18987420, instr: 5680007 
+cyc: 19021479, instr: 5690002 
+cyc: 19054949, instr: 5700008 
+cyc: 19088789, instr: 5710002 
+cyc: 19122642, instr: 5720004 
+cyc: 19156099, instr: 5730002 
+cyc: 19190046, instr: 5740004 
+cyc: 19223784, instr: 5750006 
+cyc: 19257602, instr: 5760008 
+cyc: 19291396, instr: 5770006 
+cyc: 19325141, instr: 5780008 
+cyc: 19358965, instr: 5790002 
+cyc: 19392471, instr: 5800003 
+cyc: 19426465, instr: 5810008 
+cyc: 19459821, instr: 5820004 
+cyc: 19493919, instr: 5830006 
+cyc: 19527369, instr: 5840002 
+cyc: 19561152, instr: 5850004 
+cyc: 19594992, instr: 5860006 
+cyc: 19628443, instr: 5870002 
+cyc: 19662348, instr: 5880004 
+cyc: 19696691, instr: 5890001 
+cyc: 19729829, instr: 5900001 
+cyc: 19763421, instr: 5910004 
+cyc: 19797391, instr: 5920002 
+cyc: 19831062, instr: 5930005 
+cyc: 19865037, instr: 5940003 
+cyc: 19898522, instr: 5950005 
+cyc: 19932127, instr: 5960006 
+cyc: 19966030, instr: 5970001 
+cyc: 19999708, instr: 5980007 
+cyc: 20033340, instr: 5990001 
+cyc: 20067220, instr: 6000003 
+cyc: 20101134, instr: 6010001 
+cyc: 20134633, instr: 6020003 
+cyc: 20168586, instr: 6030005 
+cyc: 20202347, instr: 6040007 
+cyc: 20235947, instr: 6050005 
+cyc: 20269571, instr: 6060007 
+cyc: 20303147, instr: 6070001 
+cyc: 20337200, instr: 6080002 
+cyc: 20371011, instr: 6090007 
+cyc: 20404676, instr: 6100003 
+cyc: 20438470, instr: 6110005 
+cyc: 20472253, instr: 6120007 
+cyc: 20506052, instr: 6130001 
+cyc: 20539781, instr: 6140006 
+cyc: 20572994, instr: 6150006 
+cyc: 20607243, instr: 6160001 
+cyc: 20640642, instr: 6170007 
+cyc: 20674960, instr: 6180002 
+cyc: 20708035, instr: 6190003 
+cyc: 20742025, instr: 6200001 
+cyc: 20775855, instr: 6210004 
+cyc: 20809551, instr: 6220002 
+cyc: 20843374, instr: 6230004 
+cyc: 20876927, instr: 6240005 
+cyc: 20910741, instr: 6250008 
+cyc: 20944742, instr: 6260006 
+cyc: 20978327, instr: 6270008 
+cyc: 21012334, instr: 6280002 
+cyc: 21045545, instr: 6290004 
+cyc: 21079682, instr: 6300002 
+cyc: 21113046, instr: 6310004 
+cyc: 21147060, instr: 6320006 
+cyc: 21180623, instr: 6330004 
+cyc: 21214292, instr: 6340006 
+cyc: 21248108, instr: 6350008 
+cyc: 21282456, instr: 6360002 
+cyc: 21315741, instr: 6370004 
+cyc: 21349321, instr: 6380003 
+cyc: 21383285, instr: 6390001 
+cyc: 21417095, instr: 6400004 
+cyc: 21450695, instr: 6410002 
+cyc: 21484543, instr: 6420005 
+cyc: 21518052, instr: 6430005 
+cyc: 21551959, instr: 6440008 
+cyc: 21585651, instr: 6450006 
+cyc: 21619101, instr: 6460001 
+cyc: 21653092, instr: 6470002 
+cyc: 21686977, instr: 6480004 
+cyc: 21720698, instr: 6490003 
+cyc: 21754318, instr: 6500001 
+cyc: 21788138, instr: 6510003 
+cyc: 21821949, instr: 6520004 
+cyc: 21855456, instr: 6530007 
+cyc: 21889390, instr: 6540005 
+cyc: 21923118, instr: 6550007 
+cyc: 21956722, instr: 6560001 
+cyc: 21990573, instr: 6570003 
+cyc: 22024298, instr: 6580001 
+cyc: 22058107, instr: 6590003 
+cyc: 22091989, instr: 6600005 
+cyc: 22125347, instr: 6610007 
+cyc: 22159414, instr: 6620005 
+cyc: 22193028, instr: 6630008 
+cyc: 22226416, instr: 6640006 
+cyc: 22260748, instr: 6650001 
+cyc: 22294029, instr: 6660002 
+cyc: 22328140, instr: 6670004 
+cyc: 22361586, instr: 6680003 
+cyc: 22395329, instr: 6690001 
+cyc: 22428923, instr: 6700006 
+cyc: 22462812, instr: 6710004 
+cyc: 22496549, instr: 6720007 
+cyc: 22530326, instr: 6730005 
+cyc: 22564124, instr: 6740008 
+cyc: 22597688, instr: 6750001 
+cyc: 22631777, instr: 6760003 
+cyc: 22665494, instr: 6770002 
+cyc: 22698775, instr: 6780004 
+cyc: 22732856, instr: 6790002 
+cyc: 22766303, instr: 6800003 
+cyc: 22799975, instr: 6810006 
+cyc: 22833756, instr: 6820004 
+cyc: 22868044, instr: 6830006 
+cyc: 22901011, instr: 6840007 
+cyc: 22935033, instr: 6850002 
+cyc: 22968853, instr: 6860004 
+cyc: 23002803, instr: 6870003 
+cyc: 23036442, instr: 6880001 
+cyc: 23070000, instr: 6890006 
+cyc: 23103742, instr: 6900004 
+cyc: 23137965, instr: 6910007 
+cyc: 23171531, instr: 6920005 
+cyc: 23204914, instr: 6930008 
+cyc: 23238808, instr: 6940001 
+cyc: 23272620, instr: 6950003 
+cyc: 23306407, instr: 6960002 
+cyc: 23339860, instr: 6970004 
+cyc: 23373900, instr: 6980005 
+cyc: 23407852, instr: 6990003 
+cyc: 23441361, instr: 7000006 
+cyc: 23475202, instr: 7010004 
+cyc: 23508768, instr: 7020007 
+cyc: 23542813, instr: 7030007 
+cyc: 23576304, instr: 7040002 
+cyc: 23610011, instr: 7050001 
+cyc: 23644035, instr: 7060003 
+cyc: 23677600, instr: 7070001 
+cyc: 23711153, instr: 7080002 
+cyc: 23745201, instr: 7090004 
+cyc: 23778920, instr: 7100007 
+cyc: 23812406, instr: 7110005 
+cyc: 23846314, instr: 7120006 
+cyc: 23879619, instr: 7130001 
+cyc: 23913879, instr: 7140003 
+cyc: 23947372, instr: 7150002 
+cyc: 23981341, instr: 7160004 
+cyc: 24014695, instr: 7170005 
+cyc: 24048413, instr: 7180003 
+cyc: 24082168, instr: 7190006 
+cyc: 24116137, instr: 7200004 
+cyc: 24149967, instr: 7210007 
+cyc: 24183334, instr: 7220007 
+cyc: 24217181, instr: 7230002 
+cyc: 24251298, instr: 7240001 
+cyc: 24284838, instr: 7250003 
+cyc: 24318534, instr: 7260004 
+cyc: 24352239, instr: 7270002 
+cyc: 24386058, instr: 7280005 
+cyc: 24419691, instr: 7290003 
+cyc: 24453842, instr: 7300006 
+cyc: 24487307, instr: 7310008 
+cyc: 24520927, instr: 7320005 
+cyc: 24554950, instr: 7330007 
+cyc: 24588645, instr: 7340002 
+cyc: 24622283, instr: 7350004 
+cyc: 24655917, instr: 7360001 
+cyc: 24689557, instr: 7370003 
+cyc: 24723746, instr: 7380006 
+cyc: 24757239, instr: 7390004 
+cyc: 24790848, instr: 7400005 
+cyc: 24824562, instr: 7410007 
+cyc: 24858556, instr: 7420002 
+cyc: 24892254, instr: 7430001 
+cyc: 24925680, instr: 7440003 
+cyc: 24959658, instr: 7450004 
+cyc: 24993314, instr: 7460002 
+cyc: 25026838, instr: 7470005 
+cyc: 25060819, instr: 7480003 
+cyc: 25094598, instr: 7490006 
+cyc: 25128546, instr: 7500006 
+cyc: 25161913, instr: 7510001 
+cyc: 25195654, instr: 7520007 
+cyc: 25229623, instr: 7530002 
+cyc: 25263172, instr: 7540004 
+cyc: 25296848, instr: 7550003 
+cyc: 25330743, instr: 7560005 
+cyc: 25364376, instr: 7570002 
+cyc: 25398281, instr: 7580004 
+cyc: 25431904, instr: 7590008 
+cyc: 25465634, instr: 7600004 
+cyc: 25499428, instr: 7610006 
+cyc: 25532840, instr: 7620001 
+cyc: 25566926, instr: 7630003 
+cyc: 25600365, instr: 7640008 
+cyc: 25634451, instr: 7650002 
+cyc: 25667771, instr: 7660005 
+cyc: 25701930, instr: 7670003 
+cyc: 25735214, instr: 7680004 
+cyc: 25768946, instr: 7690006 
+cyc: 25802829, instr: 7700001 
+cyc: 25836748, instr: 7710007 
+cyc: 25870381, instr: 7720002 
+cyc: 25904078, instr: 7730003 
+cyc: 25938042, instr: 7740001 
+cyc: 25971717, instr: 7750004 
+cyc: 26005604, instr: 7760002 
+cyc: 26039454, instr: 7770005 
+cyc: 26072952, instr: 7780007 
+cyc: 26106557, instr: 7790001 
+cyc: 26140609, instr: 7800008 
+cyc: 26174347, instr: 7810005 
+cyc: 26208010, instr: 7820001 
+cyc: 26241558, instr: 7830003 
+cyc: 26275353, instr: 7840004 
+cyc: 26309374, instr: 7850001 
+cyc: 26342922, instr: 7860003 
+cyc: 26376471, instr: 7870007 
+cyc: 26410217, instr: 7880003 
+cyc: 26444112, instr: 7890005 
+cyc: 26477836, instr: 7900007 
+cyc: 26511365, instr: 7910002 
+cyc: 26545272, instr: 7920007 
+cyc: 26579001, instr: 7930001 
+cyc: 26612816, instr: 7940004 
+cyc: 26646320, instr: 7950002 
+cyc: 26679717, instr: 7960003 
+cyc: 26714311, instr: 7970005 
+cyc: 26747645, instr: 7980008 
+cyc: 26781415, instr: 7990006 
+cyc: 26815357, instr: 8000001 
+cyc: 26848795, instr: 8010002 
+cyc: 26882960, instr: 8020002 
+cyc: 26916460, instr: 8030004 
+cyc: 26950569, instr: 8040003 
+cyc: 26984093, instr: 8050005 
+cyc: 27017908, instr: 8060004 
+cyc: 27051268, instr: 8070006 
+cyc: 27085274, instr: 8080008 
+cyc: 27119075, instr: 8090004 
+cyc: 27152480, instr: 8100008 
+cyc: 27186319, instr: 8110002 
+cyc: 27220093, instr: 8120003 
+cyc: 27253599, instr: 8130008 
+cyc: 27287737, instr: 8140002 
+cyc: 27321198, instr: 8150006 
+cyc: 27355002, instr: 8160002 
+cyc: 27388490, instr: 8170004 
+cyc: 27422450, instr: 8180006 
+cyc: 27455779, instr: 8190001 
+cyc: 27489798, instr: 8200006 
+cyc: 27523550, instr: 8210008 
+cyc: 27557350, instr: 8220003 
+cyc: 27591383, instr: 8230001 
+cyc: 27625260, instr: 8240008 
+cyc: 27658610, instr: 8250005 
+cyc: 27692397, instr: 8260005 
+cyc: 27726295, instr: 8270007 
+cyc: 27760110, instr: 8280001 
+cyc: 27793231, instr: 8290005 
+cyc: 27826739, instr: 8300003 
+cyc: 27860875, instr: 8310006 
+cyc: 27894681, instr: 8320004 
+cyc: 27928345, instr: 8330001 
+cyc: 27961720, instr: 8340007 
+cyc: 27995786, instr: 8350002 
+cyc: 28029719, instr: 8360001 
+cyc: 28063107, instr: 8370003 
+cyc: 28096817, instr: 8380004 
+cyc: 28130553, instr: 8390002 
+cyc: 28164503, instr: 8400005 
+cyc: 28198324, instr: 8410003 
+cyc: 28232017, instr: 8420005 
+cyc: 28265502, instr: 8430006 
+cyc: 28299479, instr: 8440001 
+cyc: 28333191, instr: 8450007 
+cyc: 28367218, instr: 8460001 
+cyc: 28400879, instr: 8470002 
+cyc: 28434581, instr: 8480005 
+cyc: 28468353, instr: 8490003 
+cyc: 28502194, instr: 8500006 
+cyc: 28535834, instr: 8510004 
+cyc: 28569296, instr: 8520001 
+cyc: 28603391, instr: 8530007 
+cyc: 28636776, instr: 8540002 
+cyc: 28670921, instr: 8550001 
+cyc: 28704468, instr: 8560003 
+cyc: 28738157, instr: 8570004 
+cyc: 28771734, instr: 8580002 
+cyc: 28805718, instr: 8590005 
+cyc: 28839305, instr: 8600003 
+cyc: 28872857, instr: 8610008 
+cyc: 28906817, instr: 8620006 
+cyc: 28940368, instr: 8630001 
+cyc: 28974136, instr: 8640007 
+cyc: 29008168, instr: 8650002 
+cyc: 29041563, instr: 8660003 
+cyc: 29075590, instr: 8670001 
+cyc: 29109080, instr: 8680004 
+cyc: 29142799, instr: 8690002 
+cyc: 29176643, instr: 8700004 
+cyc: 29210783, instr: 8710005 
+cyc: 29244064, instr: 8720007 
+cyc: 29277965, instr: 8730002 
+cyc: 29311776, instr: 8740001 
+cyc: 29345740, instr: 8750001 
+cyc: 29379118, instr: 8760004 
+cyc: 29412836, instr: 8770002 
+cyc: 29446802, instr: 8780005 
+cyc: 29480464, instr: 8790003 
+cyc: 29514242, instr: 8800008 
+cyc: 29547518, instr: 8810006 
+cyc: 29581842, instr: 8820001 
+cyc: 29615590, instr: 8830007 
+cyc: 29649219, instr: 8840002 
+cyc: 29682603, instr: 8850003 
+cyc: 29716453, instr: 8860001 
+cyc: 29750516, instr: 8870004 
+cyc: 29784120, instr: 8880002 
+cyc: 29817607, instr: 8890007 
+cyc: 29851181, instr: 8900005 
+cyc: 29885667, instr: 8910008 
+cyc: 29918987, instr: 8920006 
+cyc: 29952879, instr: 8930001 
+cyc: 29986713, instr: 8940003 
+cyc: 30020208, instr: 8950008 
+cyc: 30054224, instr: 8960002 
+cyc: 30087963, instr: 8970005 
+cyc: 30121619, instr: 8980003 
+cyc: 30155220, instr: 8990004 
+cyc: 30189067, instr: 9000006 
+cyc: 30222431, instr: 9010001 
+cyc: 30256668, instr: 9020007 
+cyc: 30289903, instr: 9030008 
+cyc: 30323877, instr: 9040003 
+cyc: 30357452, instr: 9050001 
+cyc: 30391326, instr: 9060004 
+cyc: 30424960, instr: 9070002 
+cyc: 30458558, instr: 9080007 
+cyc: 30492530, instr: 9090005 
+cyc: 30526112, instr: 9100008 
+cyc: 30560220, instr: 9110006 
+cyc: 30593941, instr: 9120001 
+cyc: 30627336, instr: 9130002 
+cyc: 30661298, instr: 9140004 
+cyc: 30694877, instr: 9150003 
+cyc: 30728543, instr: 9160001 
+cyc: 30762453, instr: 9170007 
+cyc: 30796292, instr: 9180006 
+cyc: 30830379, instr: 9190003 
+cyc: 30863758, instr: 9200005 
+cyc: 30897633, instr: 9210007 
+cyc: 30931467, instr: 9220002 
+cyc: 30964892, instr: 9230007 
+cyc: 30998851, instr: 9240001 
+cyc: 31032550, instr: 9250004 
+cyc: 31066785, instr: 9260002 
+cyc: 31099974, instr: 9270003 
+cyc: 31133418, instr: 9280005 
+cyc: 31167594, instr: 9290008 
+cyc: 31201469, instr: 9300006 
+cyc: 31234885, instr: 9310007 
+cyc: 31268612, instr: 9320002 
+cyc: 31302524, instr: 9330004 
+cyc: 31336211, instr: 9340003 
+cyc: 31369886, instr: 9350001 
+cyc: 31403348, instr: 9360006 
+cyc: 31437248, instr: 9370004 
+cyc: 31471346, instr: 9380007 
+cyc: 31504692, instr: 9390005 
+cyc: 31538709, instr: 9400008 
+cyc: 31572535, instr: 9410002 
+cyc: 31605927, instr: 9420001 
+cyc: 31639769, instr: 9430003 
+cyc: 31673768, instr: 9440008 
+cyc: 31707150, instr: 9450004 
+cyc: 31741064, instr: 9460006 
+cyc: 31774925, instr: 9470002 
+cyc: 31808304, instr: 9480004 
+cyc: 31842438, instr: 9490006 
+cyc: 31875805, instr: 9500001 
+cyc: 31909799, instr: 9510006 
+cyc: 31943284, instr: 9520008 
+cyc: 31977457, instr: 9530003 
+cyc: 32010781, instr: 9540001 
+cyc: 32044618, instr: 9550002 
+cyc: 32078425, instr: 9560004 
+cyc: 32111924, instr: 9570007 
+cyc: 32145967, instr: 9580005 
+cyc: 32179562, instr: 9590006 
+cyc: 32213269, instr: 9600001 
+cyc: 32247082, instr: 9610003 
+cyc: 32280853, instr: 9620002 
+cyc: 32314766, instr: 9630004 
+cyc: 32348208, instr: 9640003 
+cyc: 32382450, instr: 9650005 
+cyc: 32415930, instr: 9660007 
+cyc: 32449308, instr: 9670006 
+cyc: 32483664, instr: 9680003 
+cyc: 32517229, instr: 9690007 
+cyc: 32551127, instr: 9700001 
+cyc: 32584524, instr: 9710002 
+cyc: 32618183, instr: 9720007 
+cyc: 32652083, instr: 9730003 
+cyc: 32685759, instr: 9740005 
+cyc: 32719350, instr: 9750001 
+cyc: 32753337, instr: 9760003 
+cyc: 32786991, instr: 9770005 
+cyc: 32820488, instr: 9780001 
+cyc: 32854155, instr: 9790005 
+cyc: 32888235, instr: 9800007 
+cyc: 32922080, instr: 9810002 
+cyc: 32955597, instr: 9820004 
+cyc: 32989034, instr: 9830001 
+cyc: 33022939, instr: 9840003 
+cyc: 33057145, instr: 9850006 
+cyc: 33090402, instr: 9860004 
+cyc: 33124462, instr: 9870003 
+cyc: 33158271, instr: 9880008 
+cyc: 33191643, instr: 9890008 
+cyc: 33225791, instr: 9900002 
+cyc: 33259303, instr: 9910001 
+cyc: 33293168, instr: 9920004 
+cyc: 33326818, instr: 9930002 
+cyc: 33360753, instr: 9940004 
+cyc: 33394336, instr: 9950006 
+cyc: 33427894, instr: 9960004 
+cyc: 33461872, instr: 9970006 
+cyc: 33495476, instr: 9980008 
+cyc: 33529535, instr: 9990001 
+cyc: 33563261, instr: 10000006 
+***** exiting (allinstructions) *****
+Contexts: 1  Fetch Width: 8
+No of useful instructions fetched: 10000063 (3.72% proc util.)
+No of total instructions fetched:  10215987 (3.80% proc util.)
+ includes 20 misfetch (0.0%), 215904 (2.1%) wrong-path fetches
+ and 0 non-WP flushed for failed lock and other (0.0%)
+No of useful instructions issued/executed: 10000118 (3.72% proc util.)
+No of total instructions issued/executed:  10026246 (3.73% proc util.)
+ includes 26128 wrong-path (0.3%) insts and 0 flushed (0.0%)
+    fp 42712, 0.43%
+    synch 0, 0.00%
+    integer 5840502, 58.25%
+    load/store 4143032, 41.32%
+No of cycles taken: 33563595
+Parallelism [ 0.298,] = 0.298
+Core 0 scheduling stats
+  Avg pre-sched occupancy of IQ: 1.57 (4.90%), FQ: 0.00 (0.01%)
+  Rename IQ full cyc: 946 (0.00%), FQ: 0 (0.00%)
+  Avg occupancy of I regs: 35.22 (55.03%), FP regs: 0.03 (0.04%)
+  Rename I regs full cyc: 0 (0.00%), FP regs: 0 (0.00%)
+  Avg occupancy of LSQ: 23.03 (95.95%)
+  Rename LSQ full cyc: 23715488 (70.66%)
+  Avg occupancy of alus IALUS: 0.17 (8.70%), FPALUS: 0.00 (0.13%), LDST: 0.12 (12.34%)
+  Issue conflicts, I unit: 32389197 (0.97), FP: 0 (0.00), LDST: 12829886 (0.38)
+  Issue conflicts, D-MSHR: 0 (0.00), mb: 0 (0.00), wmb: 0 (0.00), mem: 1690 (0.00)
+  Total conflicts (non-issued, ready insts): 34856346 (1.04)
+  Total conflict cyc buckets: 283463 789250 1788429 1764039 205792 0 0 0 0 0 0 0 0 0 0 0
+Context 0 scheduling stats
+  Avg occupancy of ROB: 57.15 (89.30%)
+  Fetch I-MSHR full: 0 (0.00%)
+  Rename ROB full cyc: 5603885 (16.70%), fetch alist full cyc: 0 (0.00%)
+Commits: [ 10000003 ] = 10000003
+Syscalls: [ 0 ] = 0
+In-flight: [ 60 ] = 60
+App statistics
+  ID_order: [ 0 ]
+  insts: [ 20000063 ]
+  commits: [ 10000003 ]
+  discards: [ 0 ]
+  syscalls: [ 69 ]
+  total_cyc: [ 33563595 ]
+  sched_cyc: [ 33563555 ]
+  sched_count: [ 1 ]
+  commits/schedcyc: [ 0.298 ]
+  commits/totalcyc: [ 0.298 ]
+  icache_miss_pct: [ 0.00 ]
+  dcache_accesses: [ 3571527 ]
+  dcache_non-merged_miss_pct: [ 11.13 ]
+  l2cache_accesses: [ 397208 ]
+  l2cache_non-merged_miss_pct: [ 94.04 ]
+  l3cache_accesses: [ 373521 ]
+  l3cache_non-merged_miss_pct: [ 99.51 ]
+  mem_accesses: [ 371673 ]
+  itlb_miss_pct: [ 0.00 ]
+  dtlb_miss_pct: [ 0.08 ]
+  bpred_miss_pct: [ 3.27 ]
+  retpred_miss_pct: [ -nan ]
+  avg_mem_delay_cyc: [ 68.0 ]
+  instq_conf_cyc/schedcyc_pct: [ 0.00 ]
+  long_mem_detected: [ 130728 ]
+  long_mem_flushed: [ 0 ]
+Cache Statistics
+Core 0:
+  Reads: 2458100   Writes: 2685323
+  Hit times (excluding exec) from: L1=2, L2=14, L3=43, M=313
+  Ideal est. transfer bandwidth (bytes/cyc * banks * ports):
+          part    access     wb-to      fill
+           L1I        16        na       256
+           L1D        32        na       256
+            L2       256       256       256
+           Bus         8        na        32
+            L3        64        64        64
+           Mem     10.24     10.24        na
+  ICACHE: size: 32 KB assoc: 1
+  ICACHE: hits: 1571876 misses: 20  Hit Ratio: 100.00%
+  ICACHE: coher misses: 0 invalidates: 0
+          wbfull_confs: 0
+  DCACHE: size: 32 KB assoc: 1
+  DCACHE: hits: 3174086 misses: 397441 writebacks: 385765  Hit Ratio: 88.87%
+  DCACHE: coher misses: 0 upgrade misses: 0
+          coher writebacks: 0 invalidates: 0
+          wbfull_confs: 0 coher_busy: 0 
+  SCACHE: size: 128 KB assoc: 4
+  SCACHE: hits: 23939 misses: 373522 writebacks: 369680  Hit Ratio: 6.02%
+  SCACHE: coher misses: 0 upgrade misses: 0 
+          coher writebacks: 0 invalidates: 0
+          wbfull_confs: 0 coher_busy: 0
+  Stalls for L2 MSHR conflicts: 0
+  ITLB: size: 48, misses 1, miss rate 0.00
+  DTLB: size: 128, misses 2918, miss rate 0.08
+  icache bank util. 0.002 0.002 0.002 0.006 0.010 0.042 0.025 0.006 
+  dcache bank util. 0.037 0.054 0.030 0.041 0.030 0.026 0.026 0.027 
+  L2 bank util. 0.009 0.009 0.009 0.009 0.009 0.008 0.008 0.009 
+Stall for miss queue full 0 cycles (0.00%)
+3CACHE: size: 4096 KB assoc: 16
+3CACHE: hits: 1848 misses: 371674  writebacks: 306107  Hit Ratio: 0.49%
+3CACHE: wbfull_confs: 0
+avg mem delay 68.042
+Unified bus: 1116732 xfers, 0 syncs, 31703653 idle_cyc, 0 sync_cyc, 0.055 util
+L3 util. = 0.033
+MemUnit stats: 371674 reads, 306107 writes
+MemUnit bank util: 0.126 0.126 0.126 0.126 0.126 0.126 0.126 0.126 0.126 0.126 0.126 0.126 0.126 0.126 0.126 0.126
+Core 0:
+  branch prediction, hits = 418937, misses = 14183, hit rate = 96.73%
+  jump prediction, hits = 432898, misses = 5, hit rate = 100.00%
+  return_stack prediction, hits = 0, misses = 0, hit rate = -nan%
+Commit group stats:
+  started 0, inflight 0, squashed 0, aborted 0, committed 0 (-nan% of started, -nan% of not-squashed)
+  blocked cyc/mean: [ 0/-nan ]
+GlobalAppMgr stats:
+  App state/cycle breakdown:
+    "cyc","ctx_run","ctx_stalled","ready","swapping","waiting"
+    "A0",5337049,28226507,0,39,0
+  App occupancy cycles on cores:
+    "cyc","C0"
+    "A0",33563595
+  App swap-ins on cores:
+    "events","C0"
+    "A0",1
+  Core "scheduled - stalled" TLP cycles:
+    "cyc",0,1
+    "C0",28226507,5337088
+  Core scheduled TLP cycles:
+    "cyc",0,1
+    "C0",0,33563595
+  App same-core fraction: [ -nan ]
+  App mean swapped-in cyc: [ 33563595 ]
+  App scheduled IPC: [ 0.298 ]
+  App L1D blocks on cores:
+    "blocks","C0"
+    "A0",512
+  App L2 blocks on cores:
+    "blocks","C0"
+    "A0",2048
+  App L3 blocks: [ 65536 ]
+  App activate/deactivate timing stats:
+    A0
+      deact_halt: - (n=0)
+      deact_swapout: - (n=0)
+      deact_sum: - (n=0)
+      activ_fetch: 39/39/39 (n=1,sd=0)
+      activ_commit: 39/39/39 (n=1,sd=0)
+      migrate_fetch: - (n=0)
+      migrate_commit: - (n=0)
+GlobalAdaptMgr Stats:
+  last_occupancy_per_ctx
+    ROB   59 
+    IQ    6 
+    FQ    0 
+    IREG  42 
+    FREG  0 
+    LSQ   23 
+  max_occupancy_per_ctx
+    ROB   64 
+    IQ    32 
+    FQ    3 
+    IREG  47 
+    FREG  31 
+    LSQ   24 
+  resource_size_per_ctx
+    ROB   48 
+    IQ    24 
+    FQ    24 
+    IREG  48 
+    FREG  48 
+    LSQ   18 
+total IPC 10000063/33563595 = 0.298
+
+--Sim'd 3.356e+07 cyc, 1.000e+07 insts in 16.15/0.03200/16.19(99.96%) sec
+--Sim rate: 2.078e+06 cyc/s, 6.193e+05 inst/s
+--Total run time: 16.78/0.03200/16.88(99.63%) sec

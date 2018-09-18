@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="shortcut icon" href="/cacti/img/icon.ico" />
+   <link rel="stylesheet" type="text/css" href="/cacti/css/simple.css" />
+<link rel="stylesheet" type="text/css" href="/cacti/css/theme.css" />
+<link rel="stylesheet" type="text/css" href="/cacti/css/colors_hp.css" title="hp" />
+ <title>CACTI 5.3 (rev 174)</title>
+  <script type="text/javascript" src="/cacti/setfocus.js"></script>
+</head>
+<body onload="setFocus();"> <div class="page">
+  <div class="heading"><a href="http://www.hpl.hp.com/research/cacti/">CACTI</a> 5.3</div>
+  <div class="menucolumn"></div>
+  <div class="contentcolumn"><form action="/cacti/index.y?new"  method="post" accept-charset="UTF-8">
+	<table>
+		<tr>
+			<td width=120><a href="index.y">Normal Interface</a></td>
+			<td width=240>Cache Size (bytes)</td>
+			<td colspan="2"><input name="cache_size" type="text" size="10" value="65536" /> <span class="error"></span></td>
+		</tr>
+		<tr>
+			<td><a href="detailed.y">Detailed Interface</a></td>
+			<td>Line Size (bytes)</td>
+			<td colspan="2"><input name="line_size" type="text" size="10" value="64" /> <span class="error"></span></td>
+		</tr>
+		<tr>
+			<td><a href="sram.y">Pure RAM Interface</a></td>
+			<td>Associativity </td>
+			<td colspan="2"><input name="assoc" type="text" size="10" value="2" /> <span class="error"></span></td>
+		</tr>
+		<tr>
+			<td><a href="faq.y">FAQ</a></td>
+			<td>Nr. of Banks</td>
+			<td colspan="2"><input name="nrbanks" type="text" size="10" value="1" /> <span class="error"></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Technology Node (nm)</td>
+			<td colspan="2"><input name="technode" type="text" size="10" value="90" /> <span class="error"></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="hidden" name="action" value="submit" />
+				<input type="hidden" name="cacti" value="cache" />
+				<input type="hidden" name="simple" value="simple_cache" />
+			  <input name="preview-article" type="submit" value="Submit" />
+			</td>
+		</tr>
+	</table>
+</form>
+
+
+ <table>
+	 <tr>
+		 <td><h5>Cache Parameters:</h5></td>
+	 </tr>
+	 <tr>
+	 <td>
+		 Number of banks:1<br>
+		 Total Cache Size (bytes):65536<br>
+		 Size in bytes of bank:65536<br>
+		 Number of sets per bank:512<br> 
+		 Associativity:2<br> 
+		 Block Size (bytes):64<br>
+		 Read/Write Ports per bank:1<br> 
+		 Read Ports per bank:0<br>
+		 Write Ports per bank:0<br> 
+		 Technology Size (nm):90<br> 
+		 Vdd:1.2<br>
+		 <br>
+	</td>
+    </tr><tr>
+	 <td>
+		 Access time (ns): 1.66675077996<br>
+		 Random cycle time (ns):0.737170578954<br>
+		 Multisubbank interleave cycle time (of data array) (ns):0.520682633827<br>
+		 Total read dynamic energy per read port(nJ): 0.294562314156<br>
+		 Total read dynamic power per read port at max freq (W): 0.399585011347
+		 <br>
+		 Total standby leakage power per bank (W): 0.01215307117<br>
+		 Refresh power (percentage of standby leakage power): 0.0<br>	
+		 Total area (mm^2): 2.27931318294<br>
+		 DRAM array refresh interval (microseconds):0.0<br>
+		 DRAM array availability (percentage):0.0<br>
+
+	</td>
+    </tr><tr>
+	 <td>
+		 Best number of wordline segments (data): 4<br>
+		 Best number of bitline segments (data): 4<br>
+		 Best number of sets per wordline (data): 1.0<br>
+		 Best degree of bitline muxing (data): 2<br>
+		 Best degree of sense-amp level 1 muxing (data): 2<br>
+		 Best degree of sense-amp level 2 muxing (data): 1<br>
+		 <br>
+		 Best number of wordline segments (tag): 2<br>
+		 Best number of bitline segments (tag): 4<br>
+		 Best number of sets per wordline (tag): 8.0<br>
+		 Best degree of bitline muxing (tag): 16<br>
+		 Best degree of sense-amp level 1 muxing (data): 1<br>
+		 Best degree of sense-amp level 2 muxing (data): 1<br>
+		 <br>
+	 <td>
+	</td>
+  </tr>
+ <tr>
+	<td><h5>Time Components:</h5></td>
+ </tr><tr>
+  <td>
+		 <strong>Data array:</strong><br>
+		 delay_route_to_bank (ns):0.0<br>
+		 addr_din_horizontal_htree (ns):0.195269052747<br>
+		 addr_din_vertical_htree (ns):0.0594268819388<br>
+		 row_predecode_driver_and_block (ns):0.265986699142<br>
+		 row_decoder (ns):0.181658905264<br>
+		 bitlines (ns):0.163073315088<br>
+		 sense_amp (ns):0.010735383556<br>
+		 subarray_output_driver (ns):0.183691711063<br>
+		 bit_mux_predecode_driver_and_block (ns):0.333185960261<br>
+		 bit_mux_decoder (ns):0.0<br>
+		 senseamp_mux_level_1_predecode_driver_and_block (ns):0.0<br>
+		 senseamp_mux_level_1_decoder (ns):0.181169463388<br>
+		 senseamp_mux_level_2_predecode_driver_and_block (ns):0.0<br>
+		 senseamp_mux_level_2_decoder (ns):0.0<br>
+		 delay_dout_vertical_htree (ns):0.0<br>
+		 delay_dout_horizontal_htree (ns):0.195269052747<br>
+
+		 <br>
+		 <strong>Tag array:</strong><br>
+		 delay_route_to_bank (ns):0.0<br>
+		 addr_din_horizontal_htree (ns):0.0634034512147<br>
+		 addr_din_vertical_htree (ns):0.045142630275<br>
+		 row_predecode_driver_and_block (ns):0.152393231874<br>
+		 row_decoder (ns):0.190972812668<br>
+		 bitlines (ns):0.0685965886931<br>
+		 sense_amp (ns):0.010735383556<br>
+		 subarray_output_driver (ns):0.117844474518<br>
+		 bit_mux_predecode_driver_and_block (ns):0.102370052968<br>
+		 bit_mux_decoder (ns):0.187290963982<br>
+		 senseamp_mux_level_1_predecode_driver_and_block (ns):0.0<br>
+		 senseamp_mux_level_1_decoder (ns):0.0<br>
+		 senseamp_mux_level_2_predecode_driver_and_block (ns):0.0<br>
+		 senseamp_mux_level_2_decoder (ns):0.0<br>
+		 delay_dout_vertical_htree (ns):0.0<br>
+		 delay_dout_horizontal_htree (ns):0.0634034512147<br>
+		 delay_comparator (ns):0.139432594064<br>
+		 <br>		
+	</td>
+    </tr><tr>
+	<td>
+		<h5>Power Components:</h5></td>
+    </tr><tr>
+     <td>
+		<strong>Data array:</strong><br>
+		Percentage of total dynamic power:<br>
+		routing_to_bank:0.0<br>
+		addr_horizontal_htree:1.09705908153<br>
+		datain_horizontal_htree:2.41077997911e-317<br>
+ 		addr_vertical_htree:0.350824601691<br>
+		row_predecoder_drivers:0.0260915873182<br>
+		row_predecoder_blocks:0.399988697672<br>
+		row_decoder/driver:0.78352004675<br>
+		bit_mux_predecoder_drivers:0.00181322860475<br>
+		bit_mux_predecoder_blocks:1.04327476747<br>
+		bit_mux_decoders:0.0<br>
+		senseamp_mux_level_1_predecoder_drivers:0.0<br>
+		senseamp_mux_level_1_predecoder_blocks:0.0<br>
+		senseamp_mux_level_1_decoders:0.415172762041<br>
+		senseamp_mux_level_2_predecoder_drivers:0.0<br>
+		senseamp_mux_level_2_predecoder_blocks:0.0<br>
+		senseamp_mux_level_2_decoders:0.0<br>
+		bitlines:9.36932697019<br>
+		sense_amps:2.19105599963<br>
+		prechg_eq_drivers:4.9972137386<br>
+		subarray_output_drivers:14.0548460173<br>
+		dataout_vertical_htree:10.1037485287<br>
+		dyn_dataout_horizontal_htree:50.7917039782<br>
+		<br>
+		Percentage of total leakage power:<br>
+		routing_to_bank:0.0<br>
+		addr_horizontal_htree:0.0645228209244<br>
+		datain_horizontal_htree:3.71651448525<br>
+ 		addr_vertical_htree:0.0<br>
+		row_predecoder_drivers:0.00797180316531<br>
+		row_predecoder_blocks:0.560036522336<br>
+		row_decoders/drivers:11.7997845209<br>
+		bit_mux_predecoder_drivers:0.0007766441663<br>
+		bit_mux_predecoder_blocks:0.0460929082847<br>
+		bit_mux_decoders:0.0<br>
+		senseamp_mux_level_1_predecoder_drivers:0.0<br>
+		senseamp_mux_level_1_predecoder_blocks:0.0<br>
+		senseamp_mux_level_1_decoders:0.0230464541423<br>
+		senseamp_mux_level_2_predecoder_drivers:0.0<br>
+		senseamp_mux_level_2_predecoder_blocks:0.0<br>
+		senseamp_mux_level_2_decoders:0.0<br>
+		memory cells:69.7420353506<br>
+		sense_amps:0.29483747358<br>
+		prechg_eq_drivers:0.0927628227188<br>
+		subarray_output_drivers:4.51354840966<br>
+		dataout_vertical_htree:0.0<br>
+		dyn_dataout_horizontal_htree:3.71651448525<br>
+		<br>
+		<strong>Tag array:</strong><br>
+		Percentage of total dynamic power:<br>
+		routing_to_bank:0.0<br>
+		addr_horizontal_htree:0.172107989828<br>
+		datain_horizontal_htree:0.0<br>
+ 		addr_vertical_htree:0.0221606924869<br>
+		row_predecoder_drivers:0.00544499786898<br>
+		row_predecoder_blocks:0.0310444194774<br>
+		row_decoder/driver:0.391760023375<br>
+		bit_mux_predecoder_drivers:0.00544499786898<br>
+		bit_mux_predecoder_blocks:0.00661221960039<br>
+		bit_mux_decoders:0.15503607057<br>
+		senseamp_mux_level_1_predecoder_drivers:0.0<br>
+		senseamp_mux_level_1_predecoder_blocks:0.0<br>
+		senseamp_mux_level_1_decoders:0.0<br>
+		senseamp_mux_level_2_predecoder_drivers:0.0<br>
+		senseamp_mux_level_2_predecoder_blocks:0.0<br>
+		senseamp_mux_level_2_decoders:0.0<br>
+		bitlines:0.726599162686<br>
+		sense_amps:0.136940999977<br>
+		prechg_eq_drivers:2.4986068693<br>
+		subarray_output_drivers:0.00976183881688<br>
+		dataout_vertical_htree:0.00554017312171<br>
+		dyn_dataout_horizontal_htree:0.0430269974571<br>
+		dyn_comparators:0.164272541884<br>
+		<br>
+		Percentage of total leakage power:<br>
+		routing_to_bank:0.0<br>
+		addr_horizontal_htree:0.0<br>
+		datain_horizontal_htree:0.0<br>
+ 		addr_vertical_htree:0.0<br>
+		row_predecoder_drivers:0.00194980627182<br>
+		row_predecoder_blocks:0.00989219768211<br>
+		row_decoders/drivers:0.737486532554<br>
+		bit_mux_predecoder_drivers:0.00194980627182<br>
+		bit_mux_predecoder_blocks:0.00369007525528<br>
+		bit_mux_decoders:0.0115232270712<br>
+		senseamp_mux_level_1_predecoder_drivers:0.0<br>
+		senseamp_mux_level_1_predecoder_blocks:0.0<br>
+		senseamp_mux_level_1_decoders:0.0<br>
+		senseamp_mux_level_2_predecoder_drivers:0.0<br>
+		senseamp_mux_level_2_predecoder_blocks:0.0<br>
+		senseamp_mux_level_2_decoders:0.0<br>
+		memory cells:4.35887720941<br>
+		sense_amps:0.0184273420988<br>
+		prechg_eq_drivers:2.4986068693<br>
+		subarray_output_drivers:0.0931726253289<br>
+		dataout_vertical_htree:0.0<br>
+		dyn_dataout_horizontal_htree:0.0<br>
+		leak_comparators:0.138205065741<br>
+		<br>
+		</td>
+    </tr><tr>
+		<td><h5>Area Components:</h5></td>
+    </tr><tr>
+      <td>
+		<strong>Data array:</strong><br>
+		area (mm2):2.1786640872<br>
+		area_efficiency:28.4588612096<br>
+		all_banks_height (micron):1578.88472047<br>
+		all_banks_width (micron):1379.87533792<br>
+		bank_height (micron):1578.88472047<br>
+		bank_width (micron):1379.87533792<br>
+		mat_height (micron):474.802360236<br>
+		mat_width (micron):582.65766896<br>
+		subarray_memory_cell_area_height (micron):168.192<br>
+		subarray_memory_cell_area_width (micron):270.0<br>
+		routing_area_height_within_bank (micron):629.28<br>
+		routing_area_width_within_bank (micron):214.56<br>
+		<br>
+		<strong>Tag array:</strong><br>
+		area (mm2):0.100649095744<br>
+		area_efficiency:38.5015250397<br>
+		all_banks_height (micron):166.520251455<br>
+		all_banks_width (micron):604.425557038<br>
+		bank_height (micron):166.520251455<br>
+		bank_width (micron):604.425557038<br>
+		mat_height (micron):74.9801257275<br>
+		mat_width (micron):582.322900048<br>
+		subarray_memory_cell_area_height (micron):21.024<br>
+		subarray_memory_cell_area_width (micron):270.0<br>
+		routing_area_height_within_bank (micron):16.56<br>
+		routing_area_width_within_bank (micron):22.1026569897<br>
+		<br>
+		</td>
+		</tr>
+</table>
+ <br>
+ <br>
+ <hr/> 
+ <script src="/cacti/blog/articletype.js" type="text/javascript"></script>
+</div>  </div>
+</body>
+</html> 
